@@ -33,16 +33,20 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
+red = (255,0,0)
+blue = (0,0,255)
+green = (0,255,0)
+white = (250,250,250)
 
 ###################################
 # Main loop 
 ###################################
 image = Image.new("RGB", (total_columns,total_rows))
 draw = ImageDraw.Draw(image)
-red = (255,0,0)
-blue = (0,0,255)
-green = (0,255,0)
-white = (250,250,250)
+
+
+
+
 
 while True:
   startRed = random.randint(40,150)
