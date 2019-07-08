@@ -45,13 +45,10 @@ image = Image.new("RGB", (total_columns,total_rows))
 draw = ImageDraw.Draw(image)
 
 
-
-
-
 while True:
-  startRed = random.randint(40,150)
+  startRed = random.randint(100,150)
   startGreen = random.randint(0,200)
-  startBlue = random.randint(0,255)
+  startBlue = random.randint(10,255)
   fadeBlue =  random.randint(1,5)
   for i in range (total_rows/2+1):
     #draw.rectangle( (i,i,total_columns-i, total_rows-i), outline = white)
