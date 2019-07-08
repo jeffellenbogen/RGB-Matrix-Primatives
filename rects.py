@@ -49,13 +49,14 @@ while True:
   startRed = random.randint(100,150)
   startGreen = random.randint(0,200)
   startBlue = random.randint(10,255)
-  fadeBlue =  random.randint(1,5)
+  fadeBlue =  random.randint(3,5)
   for i in range (total_rows/2+1):
     #draw.rectangle( (i,i,total_columns-i, total_rows-i), outline = white)
     draw.rectangle( (i,i,total_columns-i,total_rows-i), outline = (startRed,startGreen,startBlue-fadeBlue*i) )
-    sleep(.01)
+    sleep(.03)
     matrix.SetImage(image, 0, 0)
-
+  
+  sleep(1)
   linewidth = random.randint(5,20)
   offset = random.randint(5,40)
 
@@ -66,7 +67,7 @@ while True:
     draw.line((i+6*linewidth,0,i+6*linewidth+offset,96),fill=blue)
     matrix.SetImage(image, 0, 0)
     sleep(.01)
-
+  sleep(1)
 
 try:
   print("Press CTRL-C to stop")
