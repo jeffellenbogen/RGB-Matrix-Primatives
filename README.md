@@ -3,4 +3,4 @@
 <img src="matrixOfMatrices.jpeg" width=350 align=center>
 
 ![Matrix of Matrices Success]
-(https://github.com/jellenbogen/rects/matrixOfMatrices.jpeg)
+(https://github.com/jeffellenbogen/rects/blob/master/matrixOfMatrices.jpeg)
