@@ -101,17 +101,17 @@ def ScreenWipe(direction):
 
   #Horizontal wipe    
   elif (direction == 2):
-      for x in range (128):
-        draw.line((x,0,x,96), fill=bg_color)
-        matrix.SetImage(image,10,0)
-        sleep(.003)  
+    for x in range (128):
+      draw.line((x,0,x,96), fill=bg_color)
+      matrix.SetImage(image,10,0)
+      sleep(.003)  
 
   #Diagonal wipe -- This currently doesn't work as desired. See issue #6
   else:
-      for z in range (225):
-        draw.line((0,z,128,z-128), fill=bg_color)
-        matrix.SetImage(image,10,0)
-        sleep(.001)    
+    for z in range (225):
+      draw.line((0,z,128,z-128), fill=bg_color)
+      matrix.SetImage(image,10,0)
+      sleep(.001)    
 
 ###################################
 # Main loop 
