@@ -75,8 +75,8 @@ def newImage():
 # ScreenWipe
 ###################################
 def ScreenWipe(direction):
-  global temp_image
-  global temp_draw
+  #global temp_image
+  #global temp_draw
   global bg_color
   temp_image = Image.new("RGB", (0, 0))
   temp_draw = ImageDraw.Draw(temp_image)
