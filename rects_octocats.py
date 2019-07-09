@@ -33,7 +33,7 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-bg_color = (0,0,0)
+bg_color = (10,10,10)
 
 
 
