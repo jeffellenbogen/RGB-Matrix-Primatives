@@ -54,7 +54,7 @@ def background():
   global total_rows
   #temp_image = Image.new("RGB", (total_columns,total_rows))
   #temp_draw = ImageDraw.Draw(temp_image)
-  temp_draw.rectangle((0,0,95,127), fill= bg_color)
+  temp_draw.rectangle((0,0,128,96), fill= bg_color)
   matrix.SetImage(temp_image,0,0)
 
 
