@@ -85,7 +85,7 @@ def ScreenWipe(direction):
   global total_rows
   global total_columns
   #temp_image = Image.new("RGB", (total_columns,total_rows))
-  #temp_draw = ImageDraw.Draw(temp_image)
+  temp_draw = ImageDraw.Draw(temp_image)
   
   #Vertical wipe
   if (direction == 1): 
