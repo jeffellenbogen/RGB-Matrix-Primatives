@@ -33,13 +33,13 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-bg_color = (0,255,255)
+bg_color = (100,100,100)
 
 
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
-image = image.resize((128,128))
+image = image.resize((96,96))
 
 ###################################
 # Background
@@ -66,7 +66,7 @@ def newImage():
     image = Image.open("./rects_octocats/octocat-Molly256.jpg").convert('RGB')  
   else:
     image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
-  image = image.resize((128,128))
+  image = image.resize((96,96))
 ###################################
 # ScreenWipe
 ###################################
