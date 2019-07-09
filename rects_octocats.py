@@ -33,7 +33,7 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-bg_color = (255,0,0)
+bg_color = (255,255,255)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 temp_image = Image.new("RGB", (0,0))
@@ -117,9 +117,11 @@ def ScreenWipe(direction):
 background()
 while True:
   matrix.SetImage(image,24,8)
+  background()
   sleep(3)
   ScreenWipe(random.randint(1,3))
   newImage()
+
 
 try:
   print("Press CTRL-C to stop")
