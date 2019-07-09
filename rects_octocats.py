@@ -33,7 +33,8 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-bg_color = (25,25,25)
+#bg_color = (25,25,25)
+bg_color = hsl(120,100%,50%)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 temp_image = Image.new("RGB", (total_columns,total_rows))
@@ -82,7 +83,7 @@ def ScreenWipe(direction):
   global bg_color
   global total_rows
   global total_columns
-  #temp_image = Image.new("RGB", (total_columns,total_rows))
+  temp_image = Image.new("RGB", (total_columns,total_rows))
   temp_draw = ImageDraw.Draw(temp_image)
   
   #Vertical wipe
