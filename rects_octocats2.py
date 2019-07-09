@@ -49,16 +49,13 @@ matrix.SetImage(image,24,8)
 # Background
 ###################################
 def background():
-  global bg_color
-  global randomColor
   global draw
   global image
-
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
   #temp_image = Image.new("RGB", (total_columns,total_rows))
   #temp_draw = ImageDraw.Draw(temp_image)
-  draw.rectangle((0,0,128,96), fill= (0,255,0))
+  draw.rectangle((0,0,128,96), fill = (0,255,0))
   matrix.SetImage(image,0,0)
 
 
@@ -119,7 +116,7 @@ def ScreenWipe(direction):
 background()
 
 while True:
-  matrix.SetImage(image,24,8)
+  matrix.SetImage(image,40,40)
   sleep(3)
   ScreenWipe(random.randint(1,3))
   newImage()
