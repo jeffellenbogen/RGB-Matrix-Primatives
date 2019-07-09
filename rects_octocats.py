@@ -43,7 +43,7 @@ image = image.resize((80,80))
 # Background
 ###################################
 def background():
-  temp_image = Image.new("RGB", (96,128))
+  temp_image = Image.new("RGB", (0,0))
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,95,127), fill= (bg_color))
   matrix.SetImage(temp_image,0,0)
