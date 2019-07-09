@@ -40,7 +40,6 @@ bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 image = Image.new("RGB", (total_columns,total_rows))
 draw = ImageDraw.Draw(image)
 
-
 image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
 image = image.resize((80,80))
 matrix.SetImage(image,24,8)
@@ -87,44 +86,31 @@ def newImage():
 def ScreenWipe(direction):
   global image
   global draw
-  global temp_image
-  global temp_draw
-  global bg_color
-  global randomColor
   global total_rows
   global total_columns
 
-  #temp_image = Image.new("RGB", (total_columns,total_rows))
-  #temp_draw = ImageDraw.Draw(temp_image)
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
   #Vertical wipe
   if (direction == 1): 
     for y in range (96):
-      #temp_image = Image.new("RGB", (128, 0))
-      #temp_draw = ImageDraw.Draw(temp_image)
       draw.line((0,y,128,y), fill=bg_color)
       matrix.SetImage(image,0,0)
-      #matrix.SetImage(temp_image, 0, y)
       sleep(.005)
+
   #Horizontal wipe    
   elif (direction == 2):
       for x in range (128):
-        #temp_image = Image.new("RGB", (0, 96))
-        #temp_draw = ImageDraw.Draw(temp_image)
         draw.line((x,0,x,96), fill=bg_color)
         matrix.SetImage(image,0,0)
-        #matrix.SetImage(temp_image, x, 0)
         sleep(.003)  
+
   #Diagonal wipe -- This currently doesn't work as desired. See issue #6
   else:
       for z in range (225):
-        #temp_image = Image.new("RGB", (z, z))
-        #temp_draw = ImageDraw.Draw(temp_image)
         draw.line((0,z,128,z-128), fill=bg_color)
         matrix.SetImage(image,0,0)
-        #matrix.SetImage(temp_image, 0, 0)
         sleep(.001)    
 
 ###################################
