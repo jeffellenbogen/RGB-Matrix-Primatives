@@ -33,7 +33,7 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-bg_color = (150,150,150)
+bg_color = (255,0,0)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 temp_image = Image.new("RGB", (0,0))
@@ -49,6 +49,7 @@ image = image.resize((80,80))
 def background():
   global temp_image
   global temp_draw
+  global bg_color
   temp_image = Image.new("RGB", (0,0))
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,95,127), fill= (bg_color))
