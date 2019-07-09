@@ -58,7 +58,7 @@ def background():
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
   #temp_image = Image.new("RGB", (total_columns,total_rows))
   #temp_draw = ImageDraw.Draw(temp_image)
-  draw.rectangle((0,0,128,96), fill= (255,255,255))
+  draw.rectangle((0,0,128,96), fill= (0,255,0))
   matrix.SetImage(image,0,0)
 
 
