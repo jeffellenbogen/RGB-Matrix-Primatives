@@ -57,8 +57,8 @@ def background():
 
   #temp_draw.rectangle((0,0,128,96), fill= bg_color)
   draw.rectangle((0,0,128,96), fill= bg_color)
-  matrix.SetImage(temp_image,0,0)
-
+  #matrix.SetImage(temp_image,0,0)
+  matrix.SetImage(image,0,0)
 
 ###################################
 # Image Setup
