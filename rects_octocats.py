@@ -96,7 +96,7 @@ def ScreenWipe(direction):
       temp_draw.line((0,y,128,y), fill=bg_color)
       matrix.SetImage(temp_image,0,0)
       #matrix.SetImage(temp_image, 0, y)
-      sleep(.01)
+      sleep(.005)
   #Horizontal wipe    
   elif (direction == 2):
       for x in range (128):
@@ -105,16 +105,16 @@ def ScreenWipe(direction):
         temp_draw.line((x,0,x,96), fill=bg_color)
         matrix.SetImage(temp_image,0,0)
         #matrix.SetImage(temp_image, x, 0)
-        sleep(.01)  
+        sleep(.005)  
   #Diagonal wipe -- This currently doesn't work as desired. See issue #6
   else:
-      for z in range (200):
+      for z in range (225):
         #temp_image = Image.new("RGB", (z, z))
         #temp_draw = ImageDraw.Draw(temp_image)
         temp_draw.line((0,z,128,z-128), fill=bg_color)
         matrix.SetImage(temp_image,0,0)
         #matrix.SetImage(temp_image, 0, 0)
-        sleep(.01)    
+        sleep(.003)    
 
 ###################################
 # Main loop 
