@@ -3,6 +3,3 @@ Working on creating a matrix of 32 x 32 RGB matrices made of 12 individual panel
 <img src="matrixOfMatrices.jpeg" width=350 align=center>
 </br>
 
-
-<video controls="controls" width="800" height="600" 
-       name="Video Name" src="https://github.com/jeffellenbogen/rects/blob/master/rectAndLines.MOV"></video>
