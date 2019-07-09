@@ -52,7 +52,7 @@ while True:
   fadeBlue =  random.randint(3,5)
   for i in range (total_rows/2+1):
     #draw.rectangle( (i,i,total_columns-i, total_rows-i), outline = white)
-    draw.rectangle( (i,i,total_columns-i,total_rows-i), outline = white, fill = (startRed,startGreen,startBlue-fadeBlue*i) )
+    draw.rectangle( (i,i,total_columns-i,total_rows-i), fill = (startRed,startGreen,startBlue-fadeBlue*i) )
     sleep(.03)
     matrix.SetImage(image, 0, 0)
   
