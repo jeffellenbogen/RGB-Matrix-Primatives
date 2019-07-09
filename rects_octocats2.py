@@ -83,8 +83,6 @@ def newImage():
 def ScreenWipe(direction):
   global image
   global draw
-  global total_rows
-  global total_columns
 
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
@@ -116,7 +114,7 @@ def ScreenWipe(direction):
 background()
 
 while True:
-  matrix.SetImage(image,40,40)
+  matrix.SetImage(image,24,8)
   sleep(3)
   ScreenWipe(random.randint(1,3))
   newImage()
