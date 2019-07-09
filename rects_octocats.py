@@ -33,9 +33,7 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-bg_color = (10,10,10)
-
-
+bg_color = (50,50,50)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
@@ -74,26 +72,29 @@ def ScreenWipe(direction):
   #Vertical wipe
   if (direction == 1): 
     for y in range (96):
-      temp_image = Image.new("RGB", (128, 0))
-      temp_draw = ImageDraw.Draw(temp_image)
-      temp_draw.rectangle((0,0,128,0), fill=(bg_color))
-      matrix.SetImage(temp_image, 0, y)
+      #temp_image = Image.new("RGB", (128, 0))
+      #temp_draw = ImageDraw.Draw(temp_image)
+      temp_draw.rectangle((0,y,128,y), fill=(bg_color))
+      matrix.SetImage(temp_image,0,0)
+      #matrix.SetImage(temp_image, 0, y)
       sleep(.01)
   #Horizontal wipe    
   elif (direction == 2):
       for x in range (128):
-        temp_image = Image.new("RGB", (0, 96))
-        temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.rectangle((0,0,0,96), fill=(bg_color))
-        matrix.SetImage(temp_image, x, 0)
+        #temp_image = Image.new("RGB", (0, 96))
+        #temp_draw = ImageDraw.Draw(temp_image)
+        temp_draw.rectangle((x,0,x,96), fill=(bg_color))
+        matrix.SetImage(temp_image,0,0)
+        #matrix.SetImage(temp_image, x, 0)
         sleep(.01)  
   #Diagonal wipe -- This currently doesn't work as desired. See issue #6
   else:
       for z in range (128):
-        temp_image = Image.new("RGB", (z, z))
-        temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.rectangle((0,0,z,z), fill=(bg_color))
-        matrix.SetImage(temp_image, 0, 0)
+        #temp_image = Image.new("RGB", (z, z))
+        #temp_draw = ImageDraw.Draw(temp_image)
+        temp_draw.rectangle((0,z,z+95,z-95), fill=(bg_color))
+        matrix.SetImage(temp_image,0,0)
+        #matrix.SetImage(temp_image, 0, 0)
         sleep(.01)    
 
 ###################################
