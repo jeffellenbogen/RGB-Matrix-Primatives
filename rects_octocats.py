@@ -36,7 +36,7 @@ matrix = RGBMatrix(options = options)
 bg_color = (255,255,255)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-temp_image = Image.new("RGB", (0,0))
+temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
 
 image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
@@ -47,10 +47,12 @@ image = image.resize((80,80))
 # Background
 ###################################
 def background():
-  #global temp_image
-  #global temp_draw
-  #global bg_color
-  temp_image = Image.new("RGB", (0,0))
+  global temp_image
+  global temp_draw
+  global bg_color
+  global total_columns
+  global total_rows
+  temp_image = Image.new("RGB", (total_columns,total_rows))
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,95,127), fill= bg_color)
   matrix.SetImage(temp_image,0,0)
@@ -77,10 +79,12 @@ def newImage():
 # ScreenWipe
 ###################################
 def ScreenWipe(direction):
-  #global temp_image
-  #global temp_draw
+  global temp_image
+  global temp_draw
   global bg_color
-  temp_image = Image.new("RGB", (0, 0))
+  global total_rows
+  global total_columns
+  temp_image = Image.new("RGB", (total_columns,total_rows))
   temp_draw = ImageDraw.Draw(temp_image)
   
   #Vertical wipe
