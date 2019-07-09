@@ -34,7 +34,7 @@ options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
 #bg_color = (25,25,25)
-bg_color ="hsl(0, 100%, 50%)")
+bg_color ="hsl(0, 100%, 50%)"
 
 
 
