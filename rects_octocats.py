@@ -47,9 +47,9 @@ image = image.resize((80,80))
 # Background
 ###################################
 def background():
-  global temp_image
-  global temp_draw
-  global bg_color
+  #global temp_image
+  #global temp_draw
+  #global bg_color
   temp_image = Image.new("RGB", (0,0))
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,95,127), fill= bg_color)
