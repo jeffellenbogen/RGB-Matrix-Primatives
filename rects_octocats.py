@@ -107,7 +107,7 @@ def ScreenWipe(direction):
         sleep(.01)  
   #Diagonal wipe -- This currently doesn't work as desired. See issue #6
   else:
-      for z in range (128):
+      for z in range (200):
         #temp_image = Image.new("RGB", (z, z))
         #temp_draw = ImageDraw.Draw(temp_image)
         temp_draw.line((0,z,z+95,z-95), fill=bg_color)
