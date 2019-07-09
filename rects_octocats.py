@@ -33,7 +33,7 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-bg_color = (50,50,50)
+bg_color = (150,150,150)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 temp_image = Image.new("RGB", (0,0))
@@ -85,7 +85,7 @@ def ScreenWipe(direction):
     for y in range (96):
       #temp_image = Image.new("RGB", (128, 0))
       #temp_draw = ImageDraw.Draw(temp_image)
-      temp_draw.rectangle((0,y,128,y), fill=(bg_color))
+      temp_draw.line((0,y,128,y), fill=(bg_color))
       matrix.SetImage(temp_image,0,0)
       #matrix.SetImage(temp_image, 0, y)
       sleep(.01)
@@ -94,7 +94,7 @@ def ScreenWipe(direction):
       for x in range (128):
         #temp_image = Image.new("RGB", (0, 96))
         #temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.rectangle((x,0,x,96), fill=(bg_color))
+        temp_draw.line((x,0,x,96), fill=(bg_color))
         matrix.SetImage(temp_image,0,0)
         #matrix.SetImage(temp_image, x, 0)
         sleep(.01)  
@@ -103,7 +103,7 @@ def ScreenWipe(direction):
       for z in range (128):
         #temp_image = Image.new("RGB", (z, z))
         #temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.rectangle((0,z,z+95,z-95), fill=(bg_color))
+        temp_draw.line((0,z,z+95,z-95), fill=(bg_color))
         matrix.SetImage(temp_image,0,0)
         #matrix.SetImage(temp_image, 0, 0)
         sleep(.01)    
