@@ -69,6 +69,7 @@ def newImage():
 # ScreenWipe
 ###################################
 def ScreenWipe(direction):
+  temp_draw = ImageDraw.Draw(temp_image)
   #Vertical wipe
   if (direction == 1): 
     for y in range (96):
