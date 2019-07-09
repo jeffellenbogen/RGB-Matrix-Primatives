@@ -34,7 +34,8 @@ options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
 #bg_color = (25,25,25)
-bg_color ="hsl(120, 100%, 20%)"
+randomColor = random.randint(0,360)
+bg_color ="hsl(randomColor, 100%, 20%)"
 
 
 
@@ -50,9 +51,11 @@ image = image.resize((80,80))
 # Background
 ###################################
 def background():
-
   global bg_color
+  global randomColor
 
+  randomColor = random.randint(0,360)
+  bg_color ="hsl(randomColor, 100%, 20%)"
   #temp_image = Image.new("RGB", (total_columns,total_rows))
   #temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,128,96), fill= bg_color)
@@ -65,6 +68,7 @@ def background():
 def newImage():
   # used global keyword here to access the object image in the main loop
   global image
+
   pickImage = random.randint(1,4)
   if pickImage == 1:
     image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
@@ -83,11 +87,15 @@ def ScreenWipe(direction):
   global temp_image
   global temp_draw
   global bg_color
+  global randomColor
   global total_rows
   global total_columns
+
   temp_image = Image.new("RGB", (total_columns,total_rows))
   temp_draw = ImageDraw.Draw(temp_image)
-  
+  randomColor = random.randint(0,360)
+  bg_color ="hsl(randomColor, 100%, 20%)"
+
   #Vertical wipe
   if (direction == 1): 
     for y in range (96):
@@ -125,7 +133,6 @@ while True:
   sleep(3)
   ScreenWipe(random.randint(1,3))
   newImage()
-
 
 try:
   print("Press CTRL-C to stop")
