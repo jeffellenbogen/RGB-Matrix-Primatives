@@ -49,8 +49,8 @@ image = image.resize((80,80))
 def background():
   global temp_image
   global temp_draw
-  #temp_image = Image.new("RGB", (0,0))
-  #temp_draw = ImageDraw.Draw(temp_image)
+  temp_image = Image.new("RGB", (0,0))
+  temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,95,127), fill= (bg_color))
   matrix.SetImage(temp_image,0,0)
 
@@ -78,8 +78,8 @@ def ScreenWipe(direction):
   global temp_image
   global temp_draw
   global bg_color
-  #temp_image = Image.new("RGB", (0, 0))
-  #temp_draw = ImageDraw.Draw(temp_image)
+  temp_image = Image.new("RGB", (0, 0))
+  temp_draw = ImageDraw.Draw(temp_image)
   
   #Vertical wipe
   if (direction == 1): 
