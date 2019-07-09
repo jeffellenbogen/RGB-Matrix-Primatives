@@ -33,7 +33,7 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-bg_color = (100,100,100)
+bg_color = (0,0,0)
 
 
 
@@ -73,23 +73,23 @@ def newImage():
 def ScreenWipe(direction):
   #Vertical wipe
   if (direction == 1): 
-    for y in range (95):
-      temp_image = Image.new("RGB", (128, 1))
+    for y in range (96):
+      temp_image = Image.new("RGB", (128, 0))
       temp_draw = ImageDraw.Draw(temp_image)
-      temp_draw.rectangle((0,0,127,0), fill=(bg_color))
+      temp_draw.rectangle((0,0,128,0), fill=(bg_color))
       matrix.SetImage(temp_image, 0, y)
       sleep(.01)
   #Horizontal wipe    
   elif (direction == 2):
-      for x in range (127):
-        temp_image = Image.new("RGB", (1, 95))
+      for x in range (128):
+        temp_image = Image.new("RGB", (0, 96))
         temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.rectangle((0,0,0,95), fill=(bg_color))
+        temp_draw.rectangle((0,0,0,96), fill=(bg_color))
         matrix.SetImage(temp_image, x, 0)
         sleep(.01)  
   #Diagonal wipe -- This currently doesn't work as desired. See issue #6
   else:
-      for z in range (127):
+      for z in range (128):
         temp_image = Image.new("RGB", (z, z))
         temp_draw = ImageDraw.Draw(temp_image)
         temp_draw.rectangle((0,0,z,z), fill=(bg_color))
