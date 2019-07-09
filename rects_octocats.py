@@ -36,12 +36,13 @@ matrix = RGBMatrix(options = options)
 bg_color = (25,25,25)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-temp_image = Image.new("RGB", (total_columns,total_rows))
-temp_draw = ImageDraw.Draw(temp_image)
+#temp_image = Image.new("RGB", (total_columns,total_rows))
+#draw = ImageDraw.Draw(temp_image)
 
 image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
 image = image.resize((80,80))
 
+draw = ImageDraw.Draw(image)
 
 ###################################
 # Background
@@ -49,10 +50,13 @@ image = image.resize((80,80))
 def background():
 
   global bg_color
+  global draw
 
   #temp_image = Image.new("RGB", (total_columns,total_rows))
   #temp_draw = ImageDraw.Draw(temp_image)
-  temp_draw.rectangle((0,0,128,96), fill= bg_color)
+
+  #temp_draw.rectangle((0,0,128,96), fill= bg_color)
+  draw.rectangle((0,0,128,96), fill= bg_color)
   matrix.SetImage(temp_image,0,0)
 
 
@@ -82,35 +86,35 @@ def ScreenWipe(direction):
   global bg_color
   global total_rows
   global total_columns
+  global image
   #temp_image = Image.new("RGB", (total_columns,total_rows))
   #temp_draw = ImageDraw.Draw(temp_image)
   
   #Vertical wipe
   if (direction == 1): 
     for y in range (96):
-      #temp_image = Image.new("RGB", (128, 0))
-      #temp_draw = ImageDraw.Draw(temp_image)
-      temp_draw.line((0,y,128,y), fill=bg_color)
-      matrix.SetImage(temp_image,0,0)
-      #matrix.SetImage(temp_image, 0, y)
+      draw.line((0,y,128,y), fill=bg_color)
+      #temp_draw.line((0,y,128,y), fill=bg_color)
+      #matrix.SetImage(temp_image,0,0)
+      matrix.SetImage(image,0,0)
       sleep(.01)
+
   #Horizontal wipe    
   elif (direction == 2):
       for x in range (128):
-        #temp_image = Image.new("RGB", (0, 96))
-        #temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.line((x,0,x,96), fill=bg_color)
-        matrix.SetImage(temp_image,0,0)
-        #matrix.SetImage(temp_image, x, 0)
+        draw.line((x,0,x,96), fill=bg_color)
+        #temp_draw.line((x,0,x,96), fill=bg_color)
+        #matrix.SetImage(temp_image,0,0)
+        matrix.SetImage(image,0,0)
         sleep(.01)  
+
   #Diagonal wipe -- This currently doesn't work as desired. See issue #6
   else:
       for z in range (200):
-        #temp_image = Image.new("RGB", (z, z))
-        #temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.line((0,z,z+95,z-95), fill=bg_color)
-        matrix.SetImage(temp_image,0,0)
-        #matrix.SetImage(temp_image, 0, 0)
+        draw.line((0,z,z+95,z-95), fill=bg_color)
+        #temp_draw.line((0,z,z+95,z-95), fill=bg_color)
+        #matrix.SetImage(temp_image,0,0)
+        matrix.SetImage(image,0,0)
         sleep(.01)    
 
 ###################################
