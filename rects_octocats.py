@@ -33,25 +33,6 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-#bg_color = (25,25,25)
-randomColor = random.randint(0,360)
-bg_color ="hsl({}, 100%, 20%)".format(randomColor)
-
-
-#create an instance of the image object to allow for it to be used globally in functions and main loop
-temp_image = Image.new("RGB", (total_columns,total_rows))
-temp_draw = ImageDraw.Draw(temp_image)
-
-image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
-image = image.resize((80,80))
-
-
-  randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
-  #temp_image = Image.new("RGB", (total_columns,total_rows))
-  #temp_draw = ImageDraw.Draw(temp_image)
-  temp_draw.rectangle((0,0,128,96), fill= bg_color)
-  matrix.SetImage(temp_image,0,0)
 
 
 ###################################
@@ -117,11 +98,26 @@ def ScreenWipe(direction):
         sleep(.001)    
 
 ###################################
-# Main loop 
+# Background fill with random color
 ###################################
 
 randomColor = random.randint(0,360)
 bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+temp_draw.rectangle((0,0,128,96), fill= bg_color)
+matrix.SetImage(temp_image,0,0)
+
+
+###################################
+# Main loop 
+###################################
+
+#create an instance of the image object to allow for it to be used globally in functions and main loop
+temp_image = Image.new("RGB", (total_columns,total_rows))
+temp_draw = ImageDraw.Draw(temp_image)
+
+image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
+image = image.resize((80,80))
+
 while True:
   
   matrix.SetImage(image,24,8)
