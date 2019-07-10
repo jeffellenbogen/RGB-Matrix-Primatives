@@ -38,7 +38,6 @@ randomColor = random.randint(0,360)
 bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
 
-
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
@@ -46,13 +45,6 @@ temp_draw = ImageDraw.Draw(temp_image)
 image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
 image = image.resize((80,80))
 
-
-###################################
-# Background
-###################################
-def background():
-  global bg_color
-  global randomColor
 
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
@@ -127,8 +119,11 @@ def ScreenWipe(direction):
 ###################################
 # Main loop 
 ###################################
-background()
+
+randomColor = random.randint(0,360)
+bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 while True:
+  
   matrix.SetImage(image,24,8)
   sleep(3)
   ScreenWipe(random.randint(1,3))
