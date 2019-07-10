@@ -17,6 +17,8 @@ matrix_columns = 32
 matrix_horizontal = 4 
 matrix_vertical = 3
 
+imageSize = 80
+
 total_rows = matrix_rows * matrix_vertical
 total_columns = matrix_columns * matrix_horizontal
 
@@ -35,13 +37,25 @@ options.gpio_slowdown = 2
 matrix = RGBMatrix(options = options)
 
 
-###################################
-# Image Setup
-###################################
-def newImage():
-  # used global keyword here to access the object image in the main loop
-  global image
+###########################
+#create an instance of the image object to allow for it to be used globally in functions and main loop
+###########################
+image = Image.new("RGB", (total_columns,total_rows))
+draw = ImageDraw.Draw(image)
 
+###################################
+# Background fill with random color
+###################################
+randomColor = random.randint(0,360)
+bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+draw.rectangle((0,0,total_columns,total_rows), fill= bg_color)
+matrix.SetImage(image,0,0)
+
+
+###################################
+# Main loop 
+###################################
+while True:
   pickImage = random.randint(1,4)
   if pickImage == 1:
     image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
@@ -51,79 +65,33 @@ def newImage():
     image = Image.open("./rects_octocats/octocat-Molly256.jpg").convert('RGB')  
   else:
     image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
-  image = image.resize((80,80))
+  image = image.resize(imageSize,imageSize)
+  matrix.SetImage(image,(total_columns - imageSize)/2,(total_rows - imageSize)/2)
+  sleep(3)
 
-###################################
-# ScreenWipe
-###################################
-def ScreenWipe(direction):
-  global temp_image
-  global temp_draw
-  global bg_color
-  global randomColor
-  global total_rows
-  global total_columns
-
-  temp_image = Image.new("RGB", (total_columns,total_rows))
-  temp_draw = ImageDraw.Draw(temp_image)
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
   #Vertical wipe
   if (direction == 1): 
-    for y in range (96):
-      #temp_image = Image.new("RGB", (128, 0))
-      #temp_draw = ImageDraw.Draw(temp_image)
-      temp_draw.line((0,y,128,y), fill=bg_color)
-      matrix.SetImage(temp_image,0,0)
-      #matrix.SetImage(temp_image, 0, y)
+    for y in range (total_rows):
+      draw.line((0,y,total_columns,y), fill=bg_color)
+      matrix.SetImage(image,0,0)
       sleep(.005)
+
   #Horizontal wipe    
   elif (direction == 2):
-      for x in range (128):
-        #temp_image = Image.new("RGB", (0, 96))
-        #temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.line((x,0,x,96), fill=bg_color)
-        matrix.SetImage(temp_image,0,0)
-        #matrix.SetImage(temp_image, x, 0)
-        sleep(.003)  
-  #Diagonal wipe -- This currently doesn't work as desired. See issue #6
+    for x in range (total_columns):
+      draw.line((x,0,x,total_rows), fill=bg_color)
+      matrix.SetImage(image,0,0)
+      sleep(.003)  
+
+  #Diagonal wipe 
   else:
-      for z in range (225):
-        #temp_image = Image.new("RGB", (z, z))
-        #temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.line((0,z,128,z-128), fill=bg_color)
-        matrix.SetImage(temp_image,0,0)
-        #matrix.SetImage(temp_image, 0, 0)
-        sleep(.001)    
-
-###################################
-# Background fill with random color
-###################################
-
-randomColor = random.randint(0,360)
-bg_color ="hsl({}, 100%, 20%)".format(randomColor)
-temp_draw.rectangle((0,0,128,96), fill= bg_color)
-matrix.SetImage(temp_image,0,0)
-
-
-###################################
-# Main loop 
-###################################
-
-#create an instance of the image object to allow for it to be used globally in functions and main loop
-temp_image = Image.new("RGB", (total_columns,total_rows))
-temp_draw = ImageDraw.Draw(temp_image)
-
-image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
-image = image.resize((80,80))
-
-while True:
-  
-  matrix.SetImage(image,24,8)
-  sleep(3)
-  ScreenWipe(random.randint(1,3))
-  newImage()
+    for z in range (total_columns+total_rows):
+      draw.line((0,z,total_columns,z - total_columns), fill=bg_color)
+      matrix.SetImage(image,0,0)
+      sleep(.001) 
 
 try:
   print("Press CTRL-C to stop")
