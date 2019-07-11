@@ -92,7 +92,7 @@ def ScreenWipe(direction):
   global total_columns
 
   #temp_image = Image.new("RGB", (total_columns,total_rows))
-  temp_draw = ImageDraw.Draw(temp_image)
+  #temp_draw = ImageDraw.Draw(temp_image)
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
