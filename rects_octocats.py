@@ -66,7 +66,7 @@ while True:
     image = Image.open("./rects_octocats/octocat-Molly256.jpg").convert('RGB')  
   else:
     image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
-  image = image.resize((imageSize, imageSize))
+  #image = image.resize((imageSize, imageSize))
   matrix.SetImage(image,(total_columns - imageSize)/2,(total_rows - imageSize)/2)
   sleep(3)
 
@@ -91,9 +91,6 @@ while True:
       draw.line((0,z,total_columns,z - total_columns), fill=bg_color)
       matrix.SetImage(image, 0, 0)
       sleep(.001) 
-
-  draw.rectangle((0,0,total_columns,total_rows), fill= bg_color)
-  matrix.SetImage(image,0,0)
   sleep(1)    
 
 try:
