@@ -68,22 +68,24 @@ def background():
 def newImage():
   # used global keyword here to access the object image in the main loop
   global temp_image
+  global image
 
   pickImage = random.randint(1,4)
   if pickImage == 1:
-    temp_image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
+    image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
   elif pickImage == 2:
-    temp_image = Image.open("./rects_octocats/octocat-Jeff256.jpg").convert('RGB')
+    image = Image.open("./rects_octocats/octocat-Jeff256.jpg").convert('RGB')
   elif pickImage == 3:
-    temp_image = Image.open("./rects_octocats/octocat-Molly256.jpg").convert('RGB')  
+    image = Image.open("./rects_octocats/octocat-Molly256.jpg").convert('RGB')  
   else:
-    temp_image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
-  temp_image = temp_image.resize((80,80))
+    image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
+  image = image.resize((80,80))
 
 ###################################
 # ScreenWipe
 ###################################
 def ScreenWipe(direction):
+  glboal image
   global temp_image
   global temp_draw
   global bg_color
