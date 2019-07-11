@@ -32,3 +32,5 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
+
+#This is to test some shapes
