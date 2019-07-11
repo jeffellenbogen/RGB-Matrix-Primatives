@@ -50,6 +50,7 @@ randomColor = random.randint(0,360)
 bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 draw.rectangle((0,0,total_columns,total_rows), fill= bg_color)
 matrix.SetImage(image,0,0)
+sleep(1)
 
 
 ###################################
@@ -66,15 +67,13 @@ while True:
   else:
     image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
   image = image.resize((imageSize, imageSize))
-  #image = image.resize((80,80))
   matrix.SetImage(image,(total_columns - imageSize)/2,(total_rows - imageSize)/2)
-  #matrix.SetImage(image,(128 - 80)/2,(96 - 80)/2)
   sleep(3)
 
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
   direction = random.randint(1,3)
-  
+
   #Vertical wipe
   if (direction == 1): 
     for y in range (total_rows):
