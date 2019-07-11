@@ -32,10 +32,10 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-startRed = random.randint(100,150)
-startGreen = random.randint(0,200)
-startBlue = random.randint(10,255)
-fadeBlue =  random.randint(3,5)
+  startRed = random.randint(100,150)
+  startGreen = random.randint(0,200)
+  startBlue = random.randint(10,255)
+  fadeBlue =  random.randint(3,5)
 
 image = Image.new("RGB", (total_columns,total_rows))
 drawRect = ImageDraw.Draw(image)
@@ -52,7 +52,8 @@ sleep(1)
 
 for i in range (total_rows/2+1):
     #draw.rectangle( (i,i,total_columns-i, total_rows-i), outline = white)
-    drawCircle.ellipse( (i,total_rows-i,total_rows-i), fill = (startRed,startGreen,startBlue-fadeBlue*i) )
+    drawCircle.ellipse( (i,i,total_columns-i,total_rows-i), fill = (startRed,startGreen,startBlue-fadeBlue*i) )
+    sleep(.03)
     sleep(.03)
     matrix.SetImage(image, 0, 0)
 
