@@ -66,7 +66,7 @@ while True:
   else:
     image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
   #image = image.resize(imageSize, imageSize)
-  image = image.resize(80, 80)
+  image = image.resize((80,80))
   #matrix.SetImage(image,(total_columns - imageSize)/2,(total_rows - imageSize)/2)
   matrix.SetImage(image,(128 - 80)/2,(96 - 80)/2)
   sleep(3)
