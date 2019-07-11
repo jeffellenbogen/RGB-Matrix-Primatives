@@ -73,7 +73,8 @@ while True:
 
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
-
+  direction = random.randint(1,3)
+  
   #Vertical wipe
   if (direction == 1): 
     for y in range (total_rows):
