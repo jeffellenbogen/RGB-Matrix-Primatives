@@ -67,18 +67,18 @@ def background():
 ###################################
 def newImage():
   # used global keyword here to access the object image in the main loop
-  global image
+  global temp_image
 
   pickImage = random.randint(1,4)
   if pickImage == 1:
-    image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
+    temp_image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
   elif pickImage == 2:
-    image = Image.open("./rects_octocats/octocat-Jeff256.jpg").convert('RGB')
+    temp_image = Image.open("./rects_octocats/octocat-Jeff256.jpg").convert('RGB')
   elif pickImage == 3:
-    image = Image.open("./rects_octocats/octocat-Molly256.jpg").convert('RGB')  
+    temp_image = Image.open("./rects_octocats/octocat-Molly256.jpg").convert('RGB')  
   else:
-    image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
-  image = image.resize((80,80))
+    temp_image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
+  temp_image = temp_image.resize((80,80))
 
 ###################################
 # ScreenWipe
@@ -91,7 +91,7 @@ def ScreenWipe(direction):
   global total_rows
   global total_columns
 
-  temp_image = Image.new("RGB", (total_columns,total_rows))
+  #temp_image = Image.new("RGB", (total_columns,total_rows))
   temp_draw = ImageDraw.Draw(temp_image)
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
