@@ -94,7 +94,7 @@ while True:
 
   draw.rectangle((0,0,total_columns,total_rows), fill= bg_color)
   matrix.SetImage(image,0,0)
-sleep(1)    
+  sleep(1)    
 
 try:
   print("Press CTRL-C to stop")
