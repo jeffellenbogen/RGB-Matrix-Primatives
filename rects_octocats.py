@@ -72,24 +72,19 @@ while True:
 
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
-
   direction = random.randint(1,3)
-  image = image.resize((total_columns,total_rows))
-
   #Vertical wipe
   if (direction == 1): 
     for y in range (total_rows):
       draw.line((0,y,total_columns,y), fill=bg_color)
       matrix.SetImage(image, 0, 0)
       sleep(.005)
-
   #Horizontal wipe    
   elif (direction == 2):
     for x in range (total_columns):
       draw.line((x,0,x,total_rows), fill=bg_color)
       matrix.SetImage(image, 0, 0)
       sleep(.003)  
-
   #Diagonal wipe 
   else:
     for z in range (total_columns+total_rows):
