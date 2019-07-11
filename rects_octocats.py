@@ -17,7 +17,7 @@ matrix_columns = 32
 matrix_horizontal = 4 
 matrix_vertical = 3
 
-imageSize = 80
+imageSize = 50
 
 total_rows = matrix_rows * matrix_vertical
 total_columns = matrix_columns * matrix_horizontal
@@ -72,7 +72,7 @@ while True:
 
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
-  
+
   direction = random.randint(1,3)
 
   #Vertical wipe
