@@ -74,6 +74,7 @@ while True:
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
   direction = random.randint(1,3)
+  image = image.resize((total_columns,total_rows))
 
   #Vertical wipe
   if (direction == 1): 
