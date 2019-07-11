@@ -32,7 +32,10 @@ options.hardware_mapping = 'regular'
 options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-
+startRed = random.randint(100,150)
+startGreen = random.randint(0,200)
+startBlue = random.randint(10,255)
+fadeBlue =  random.randint(3,5)
 
 image = Image.new("RGB", (total_columns,total_rows))
 drawRect = ImageDraw.Draw(image)
