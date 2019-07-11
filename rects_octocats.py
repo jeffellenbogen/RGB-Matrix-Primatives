@@ -85,7 +85,7 @@ def newImage():
 # ScreenWipe
 ###################################
 def ScreenWipe(direction):
-  glboal image
+  global image
   global temp_image
   global temp_draw
   global bg_color
