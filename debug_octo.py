@@ -75,8 +75,8 @@ def newImage():
     local_image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
   local_image = local_image.resize((imageSize,imageSize))
   
-  imageOffsetX = total_columns - imageSize // 2
-  imageOffsetY = total_rows - imageSize // 2
+  imageOffsetX = (total_columns - imageSize) // 2
+  imageOffsetY = (total_rows - imageSize) // 2
   temp_image.paste(local_image, (imageOffsetX,imageOffsetY))
   matrix.SetImage(temp_image,0,0)
 
