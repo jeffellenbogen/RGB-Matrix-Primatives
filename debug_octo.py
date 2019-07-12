@@ -26,9 +26,9 @@ options.cols = matrix_columns
 options.chain_length = matrix_horizontal
 options.parallel = matrix_vertical 
 
-#options.hardware_mapping = 'adafruit-hat-pwm' 
+options.hardware_mapping = 'adafruit-hat-pwm' 
 #options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat'
-options.hardware_mapping = 'regular'  
+#options.hardware_mapping = 'regular'  
 
 options.gpio_slowdown = 2
 
