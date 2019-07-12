@@ -8,7 +8,7 @@ import random
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image, ImageDraw, ImageFont
 
-fnt = ImageFont.truetype('Pillow/Tests/fonts/KhmerOSBattambang-Regular.ttf', 18)
+fnt = ImageFont.truetype('Pillow/Tests/fonts/TINY5x3GX.ttf', 18)
 
 # this is the size of ONE of our matrixes. 
 matrix_rows = 32 
