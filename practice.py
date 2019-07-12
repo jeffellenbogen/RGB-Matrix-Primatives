@@ -51,7 +51,7 @@ sleep(1)
 
 for i in range (total_rows/2+1):
     #draw.rectangle( (i,i,total_columns-i, total_rows-i), outline = white)
-    drawCircle.ellipse( (i,i,total_columns-i,total_rows-i), outline = (startRed,0,0) )
+    drawCircle.ellipse( (i,i,total_rows-i,total_rows-i), outline = (startRed,0,0) )
     sleep(.03)
     sleep(.03)
     matrix.SetImage(image, 0, 0)
