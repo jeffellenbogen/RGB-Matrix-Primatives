@@ -43,7 +43,7 @@ image = Image.new("RGB", (total_columns,total_rows))
 drawRect = ImageDraw.Draw(image)
 drawText = ImageDraw.Draw(image)
 
-color = 0
+colorInc = 0
 
 while True:
   width = random.randint(2, total_columns//2)
