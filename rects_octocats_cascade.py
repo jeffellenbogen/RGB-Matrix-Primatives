@@ -41,7 +41,7 @@ bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
 
-imageSize = 14
+imageSize = 12
 slot=1
 imageSlots = 4
 
@@ -78,11 +78,13 @@ def newImage(passedSlot):
     local_image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
   local_image = local_image.resize((imageSize,imageSize))
   
-  imageOffsetX = (total_columns // imageSlots)
-  border = imageOffsetX - imageSize
+
+  gapSpace = total_columns - (imageSize*imageSlots)
+  gapSize = gapSpace / (imageSlots+1)
+  imageOffsetX = (passedSlot-1) * gapSize + imageSize *(passedSlot-1)
   imageOffsetY = (total_rows - imageSize) // 2
 
-  temp_image.paste(local_image, (((passedSlot - 1) * imageOffsetX // 2 + border), imageOffsetY))
+  temp_image.paste(local_image, (imageOffsetX, imageOffsetY))
   matrix.SetImage(temp_image,0,0)
 
 ###################################
