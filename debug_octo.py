@@ -88,7 +88,7 @@ def ScreenWipe(direction):
   global temp_draw
   global total_rows
   global total_columns
-  wipeSpeed = . 1
+  wipeSpeed = .1
 
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
