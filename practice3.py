@@ -8,7 +8,7 @@ import random
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image, ImageDraw, ImageFont
 
-fnt = ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', 20)
+fnt = ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', 24)
 
 # this is the size of ONE of our matrixes. 
 matrix_rows = 32 
@@ -54,7 +54,7 @@ while True:
   randomColor = random.randint(0,360) 
   fill_color = "hsl({}, 100%, 50%)".format(randomColor)  
   drawRect.rectangle( (xCoord,yCoord,width,height), outline = bg_color, fill = fill_color) 
-  drawText.text((5,5), "HELLO", font=fnt, fill=(255,255,255,255))
+  drawText.text((3,5), "HELLO", font=fnt, fill=(255,255,255,255))
   matrix.SetImage(image, 0, 0)    
   sleep(pause)
 
