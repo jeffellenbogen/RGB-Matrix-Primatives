@@ -9,6 +9,8 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image, ImageDraw, ImageFont
 
 fnt = ImageFont.truetype("arial.ttf", 20)
+#ddsd
+
 
 # this is the size of ONE of our matrixes. 
 matrix_rows = 32 
