@@ -88,6 +88,7 @@ def ScreenWipe(direction):
   global temp_draw
   global total_rows
   global total_columns
+  wipeSpeed = . 1
 
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
@@ -97,21 +98,21 @@ def ScreenWipe(direction):
     for y in range (total_rows):
       temp_draw.line((0,y,total_columns,y), fill=bg_color)
       matrix.SetImage(temp_image,0,0)
-      sleep(.005)
+      sleep(wipeSpeed)
 
   #Horizontal wipe    
   elif (direction == 2):
       for x in range (total_columns):
         temp_draw.line((x,0,x,total_rows), fill=bg_color)
         matrix.SetImage(temp_image,0,0)
-        sleep(.003)  
+        sleep(wipeSpeed)  
 
   #Diagonal wipe -- This currently doesn't work as desired. See issue #6
   else:
       for z in range (total_rows+total_columns):
         temp_draw.line((0,z,total_columns,z - total_columns), fill=bg_color)
         matrix.SetImage(temp_image,0,0)
-        sleep(.001)    
+        sleep(wipeSpeed)    
 
 ###################################
 # Main loop 
