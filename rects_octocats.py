@@ -14,7 +14,7 @@ matrix_rows = 32
 matrix_columns = 32 
 
 # how many matrixes stacked horizontally and vertically 
-matrix_horizontal = 1 
+matrix_horizontal = 2 
 matrix_vertical = 1
 
 total_rows = matrix_rows * matrix_vertical
