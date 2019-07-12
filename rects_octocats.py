@@ -123,6 +123,7 @@ while True:
   newImage()
   sleep(2)
   ScreenWipe(random.randint(1,3))
+  sleep(1)
 
 try:
   print("Press CTRL-C to stop")
