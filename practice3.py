@@ -6,7 +6,9 @@ import random
 # Graphics imports, constants and structures
 ###################################
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
+
+fnt = ImageFont.truetype('Pillow/Tests/fonts/DejaVuSans.ttf', 18)
 
 # this is the size of ONE of our matrixes. 
 matrix_rows = 32 
@@ -39,7 +41,9 @@ pause = .2
 
 image = Image.new("RGB", (total_columns,total_rows))
 drawRect = ImageDraw.Draw(image)
-drawCircle = ImageDraw.Draw(image)
+drawText = ImageDraw.Draw(image)
+
+colorInc = 0
 
 while True:
   width = random.randint(2, total_columns//2)
@@ -49,8 +53,14 @@ while True:
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
   randomColor = random.randint(0,360) 
-  fill_color = "hsl({}, 100%, 50%)".format(randomColor)  
-  drawRect.rectangle( (xCoord,yCoord,width,height), outline = bg_color, fill = fill_color width = 3) 
+  fill_color = "hsl({}, 100%, 20%)".format(randomColor)  
+  drawRect.rectangle( (xCoord,yCoord,width,height), outline = bg_color, fill = fill_color) 
+  colorInc+=5
+  if colorInc > 360:
+    colorInc = 0
+  text_color = "hsl({}, 100%, 50%)".format(colorInc)  
+  black = (0,0,0)
+  drawText.text((2,5), "HELLO", font=fnt, fill=text_color)
   matrix.SetImage(image, 0, 0)    
   sleep(pause)
 
