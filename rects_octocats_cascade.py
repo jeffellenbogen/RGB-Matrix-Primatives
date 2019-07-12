@@ -41,7 +41,7 @@ bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
 
-imageSize = 12
+imageSize = 15
 slot=1
 imageSlots = 4
 
@@ -51,7 +51,7 @@ imageSlots = 4
 def background():
   global temp_image
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 50%)".format(randomColor)
+  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,total_columns,total_rows), fill= bg_color)
   matrix.SetImage(temp_image,0,0)
@@ -95,10 +95,10 @@ def ScreenWipe(direction):
   global temp_draw
   global total_rows
   global total_columns
-  wipeSpeed = .03
+  wipeSpeed = .02
 
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 50%)".format(randomColor)
+  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
   #Vertical wipe
   if (direction == 1): 
@@ -132,7 +132,7 @@ while True:
   while (slot <= 4):
     newImage(slot)
     slot+=1
-    sleep(.5)
+    sleep(.25)
   if slot > 4:
     slot = 1
   ScreenWipe(random.randint(1,3))
