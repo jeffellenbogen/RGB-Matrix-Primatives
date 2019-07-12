@@ -88,7 +88,7 @@ def ScreenWipe(direction):
   global temp_draw
   global total_rows
   global total_columns
-  wipeSpeed = .05
+  wipeSpeed = .03
 
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
@@ -112,7 +112,7 @@ def ScreenWipe(direction):
       for z in range (total_rows+total_columns):
         temp_draw.line((0,z,total_columns,z - total_columns), fill=bg_color)
         matrix.SetImage(temp_image,0,0)
-        sleep(wipeSpeed)    
+        sleep(wipeSpeed/2)    
 
 ###################################
 # Main loop 
@@ -122,7 +122,6 @@ while True:
   newImage()
   sleep(2)
   ScreenWipe(random.randint(1,3))
-  sleep(2)
 
 try:
   print("Press CTRL-C to stop")
