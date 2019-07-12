@@ -33,36 +33,32 @@ options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
 
-randomColor = random.randint(0,360)
-bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+
+speed = .05
+pause = 1
 
 image = Image.new("RGB", (total_columns,total_rows))
 drawRect = ImageDraw.Draw(image)
 drawCircle = ImageDraw.Draw(image)
 
-for i in range (total_rows/2+1):
-  drawRect.rectangle( (i,i,total_columns-i,total_rows-i), outline = bg_color ) 
-  sleep(.1)
-  matrix.SetImage(image, 0, 0)
-  
-sleep(1)
+while True:
+  randomColor = random.randint(0,360)
+  bg_color ="hsl({}, 100%, 20%)".format(randomColor)  
+  for i in range (total_rows/2+1):
+    drawRect.rectangle( (i,i,total_columns-i,total_rows-i), outline = bg_color ) 
+    sleep(speed)
+    matrix.SetImage(image, 0, 0)
+      
+  sleep(pause)
 
-randomColor = random.randint(0,360)
-bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+  randomColor = random.randint(0,360)
+  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
-for i in range (total_rows/2+1):
-  drawCircle.ellipse(( i + ((total_columns - total_rows) // 2), i,total_columns - ((total_columns - total_rows) // 2), total_rows-i), outline = bg_color )
-  sleep(.1)
-  matrix.SetImage(image, 0, 0)
+  for i in range (total_rows/2+1):
+    drawCircle.ellipse(( i + ((total_columns - total_rows) // 2), i,total_columns - ((total_columns - total_rows) // 2), total_rows-i), outline = bg_color )
+    sleep(speed)
+    matrix.SetImage(image, 0, 0)
 
-sleep(1)    
+  sleep(pause)    
 
-randomColor = random.randint(0,360)
-bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
-for i in range (total_rows/2+1):
-  drawRect.rectangle( (i,i,total_columns-i,total_rows-i), outline = bg_color )
-  sleep(.1)
-  matrix.SetImage(image, 0, 0)
-  
-sleep(1)
