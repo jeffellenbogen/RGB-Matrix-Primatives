@@ -82,7 +82,7 @@ def newImage(passedSlot):
   border = imageOffsetX - imageSize
   imageOffsetY = (total_rows - imageSize) // 2
 
-  temp_image.paste(local_image, (passedSlot - 1 * imageOffsetX // 2 + border), imageOffsetY))
+  temp_image.paste(local_image, ((passedSlot - 1 * imageOffsetX // 2 + border), imageOffsetY))
   matrix.SetImage(temp_image,0,0)
 
 ###################################
