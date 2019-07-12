@@ -51,7 +51,7 @@ randomColor = random.randint(0,360)
 bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
 for i in range (total_rows/2+1):
-  drawCircle.ellipse(( i + (total_columns - total_rows) // 2, i,total_rows- (total_columns - total_rows) // 2, total_rows-i), outline = bg_color )
+  drawCircle.ellipse(( i + ((total_columns - total_rows) // 2), i,total_columns - ((total_columns - total_rows) // 2), total_rows-i), outline = bg_color )
   sleep(.1)
   matrix.SetImage(image, 0, 0)
 
