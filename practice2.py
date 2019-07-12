@@ -56,8 +56,8 @@ while True:
 
   for i in range (total_rows/2+1):
     circleOffset = ((total_columns - total_rows) // 2)
-   #drawCircle.ellipse(( i + ((total_columns - total_rows) // 2), i,total_columns - ((total_columns - total_rows) // 2), total_rows-i), outline = bg_color )
-    drawCircle.ellipse(( i + circleOffset, i, total_columns - circleOffset - i, total_rows - i, outline = bg_color )
+    #drawCircle.ellipse(( i + ((total_columns - total_rows) // 2), i,total_columns - ((total_columns - total_rows) // 2), total_rows-i), outline = bg_color )
+    drawCircle.ellipse(( i + circleOffset, i, total_columns - circleOffset - i, total_rows - i), outline = bg_color )
     sleep(speed)
     matrix.SetImage(image, 0, 0)
 
