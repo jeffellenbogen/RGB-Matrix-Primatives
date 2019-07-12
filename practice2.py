@@ -55,7 +55,9 @@ while True:
   bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
   for i in range (total_rows/2+1):
-    drawCircle.ellipse(( i + ((total_columns - total_rows) // 2), i,total_columns - ((total_columns - total_rows) // 2), total_rows-i), outline = bg_color )
+    circleOffset = ((total_columns - total_rows) // 2)
+   #drawCircle.ellipse(( i + ((total_columns - total_rows) // 2), i,total_columns - ((total_columns - total_rows) // 2), total_rows-i), outline = bg_color )
+    drawCircle.ellipse(( i + circleOffset, i, total_columns - circleOffset - i, total_rows - i, outline = bg_color )
     sleep(speed)
     matrix.SetImage(image, 0, 0)
 
