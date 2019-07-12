@@ -128,7 +128,6 @@ background()
 sleep(2)
 
 while True:
-  newImage(slot)
   sleep(1)
   while (slot <= 4):
     newImage(slot)
