@@ -43,6 +43,7 @@ image = Image.new("RGB", (total_columns,total_rows))
 drawRect = ImageDraw.Draw(image)
 drawText = ImageDraw.Draw(image)
 
+color = 0
 
 while True:
   width = random.randint(2, total_columns//2)
@@ -54,7 +55,11 @@ while True:
   randomColor = random.randint(0,360) 
   fill_color = "hsl({}, 100%, 50%)".format(randomColor)  
   drawRect.rectangle( (xCoord,yCoord,width,height), outline = bg_color, fill = fill_color) 
-  drawText.text((2,5), "HELLO", font=fnt, fill="hsl(0, 100%, 50%)")
+  color++
+  if color > 360:
+    color = 0
+  text_color = "hsl({}, 100%, 50%)".format(color)  
+  drawText.text((2,5), "HELLO", font=fnt, fill=text_color
   matrix.SetImage(image, 0, 0)    
   sleep(pause)
 
