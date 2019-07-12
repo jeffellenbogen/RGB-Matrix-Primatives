@@ -41,7 +41,7 @@ bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
 
-imageSize = 15
+imageSize = 14
 slot=1
 imageSlots = 4
 
@@ -125,10 +125,9 @@ def ScreenWipe(direction):
 # Main loop 
 ###################################
 background()
-sleep(2)
+sleep(1)
 
 while True:
-  sleep(1)
   while (slot <= 4):
     newImage(slot)
     slot+=1
