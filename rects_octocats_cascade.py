@@ -41,9 +41,9 @@ bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
 
-imageSize = 10
+imageSize = 16
 slot=1
-imageSlots = 4
+imageSlots = 3
 
 ###################################
 # Background
