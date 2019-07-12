@@ -53,7 +53,7 @@ while True:
   bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
   randomColor = random.randint(0,360) 
   fill_color = "hsl({}, 100%, 50%)".format(randomColor)  
-  drawRect.rectangle( (xCoord,yCoord,width,height), outline = bg_color, fill = fill_color width = 3) 
+  drawRect.rectangle( (xCoord,yCoord,width,height), outline = bg_color, fill = fill_color, width = 3) 
   drawText.text((5,5), "HELLO", font=fnt, fill=(255,255,255,255))
   matrix.SetImage(image, 0, 0)    
   sleep(pause)
