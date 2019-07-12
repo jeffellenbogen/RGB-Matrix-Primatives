@@ -59,7 +59,8 @@ while True:
   if color > 360:
     color = 0
   text_color = "hsl({}, 100%, 50%)".format(color)  
-  drawText.text((2,5), "HELLO", font=fnt, fill=text_color)
+  black = (0,0,0)
+  drawText.text((2,5), "HELLO", font=fnt, fill=black)
   matrix.SetImage(image, 0, 0)    
   sleep(pause)
 
