@@ -55,7 +55,7 @@ while True:
   randomColor = random.randint(0,360) 
   fill_color = "hsl({}, 100%, 50%)".format(randomColor)  
   drawRect.rectangle( (xCoord,yCoord,width,height), outline = bg_color, fill = fill_color) 
-  color++
+  color+=1
   if color > 360:
     color = 0
   text_color = "hsl({}, 100%, 50%)".format(color)  
