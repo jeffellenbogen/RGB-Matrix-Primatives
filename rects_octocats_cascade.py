@@ -41,7 +41,9 @@ bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
 
-imageSize = 28
+imageSize = 13
+slot=1
+imageSlots = 4
 
 ###################################
 # Background
@@ -49,7 +51,7 @@ imageSize = 28
 def background():
   global temp_image
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 50%)".format(randomColor)
+  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,total_columns,total_rows), fill= bg_color)
   matrix.SetImage(temp_image,0,0)
@@ -57,10 +59,11 @@ def background():
 ###################################
 # Image Setup
 ###################################
-def newImage():
+def newImage(passedSlot):
   # used global keyword here to access the object image in the main loop
   global temp_image
   global imageSize
+  global imageSlots
   global total_rows
   global total_columns
 
@@ -75,9 +78,13 @@ def newImage():
     local_image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
   local_image = local_image.resize((imageSize,imageSize))
   
-  imageOffsetX = (total_columns - imageSize) // 2
+
+  gapSpace = total_columns - (imageSize*imageSlots)
+  gapSize = gapSpace / (imageSlots+1)
+  imageOffsetX = (passedSlot-1) * gapSize + imageSize *(passedSlot-1) + gapSize + 1
   imageOffsetY = (total_rows - imageSize) // 2
-  temp_image.paste(local_image, (imageOffsetX,imageOffsetY))
+
+  temp_image.paste(local_image, (imageOffsetX, imageOffsetY))
   matrix.SetImage(temp_image,0,0)
 
 ###################################
@@ -88,10 +95,10 @@ def ScreenWipe(direction):
   global temp_draw
   global total_rows
   global total_columns
-  wipeSpeed = .03
+  wipeSpeed = .02
 
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 50%)".format(randomColor)
+  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
   #Vertical wipe
   if (direction == 1): 
@@ -118,10 +125,16 @@ def ScreenWipe(direction):
 # Main loop 
 ###################################
 background()
-sleep(2)
+sleep(1)
+
 while True:
-  newImage()
-  sleep(2)
+  while (slot <= 4):
+    newImage(slot)
+    slot+=1
+    sleep(.25)
+  if slot > 4:
+    slot = 1
+  sleep(2)  
   ScreenWipe(random.randint(1,3))
   sleep(1)
 
