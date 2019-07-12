@@ -47,8 +47,10 @@ while True:
   xCoord = random.randint (0,total_columns-width)
   yCoord = random.randint (0,total_rows-height)
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 20%)".format(randomColor)  
-  drawRect.rectangle( (xCoord,yCoord,width,height), outline = bg_color ) 
+  bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
+  randomColor = random.randint(0,360) 
+  fill_color = "hsl({}, 100%, 50%)".format(randomColor)  
+  drawRect.rectangle( (xCoord,yCoord,width,height), outline = bg_color, fill = fill_color) 
   matrix.SetImage(image, 0, 0)    
   sleep(pause)
 
