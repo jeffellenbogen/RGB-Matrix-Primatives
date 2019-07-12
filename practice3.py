@@ -53,14 +53,14 @@ while True:
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
   randomColor = random.randint(0,360) 
-  fill_color = "hsl({}, 100%, 50%)".format(randomColor)  
+  fill_color = "hsl({}, 100%, 20%)".format(randomColor)  
   drawRect.rectangle( (xCoord,yCoord,width,height), outline = bg_color, fill = fill_color) 
-  color+=1
-  if color > 360:
-    color = 0
-  text_color = "hsl({}, 100%, 50%)".format(color)  
+  color+=5
+  if colorInc > 360:
+    colorInc = 0
+  text_color = "hsl({}, 100%, 50%)".format(colorInc)  
   black = (0,0,0)
-  drawText.text((2,5), "HELLO", font=fnt, fill=black)
+  drawText.text((2,5), "HELLO", font=fnt, fill=text_color)
   matrix.SetImage(image, 0, 0)    
   sleep(pause)
 
