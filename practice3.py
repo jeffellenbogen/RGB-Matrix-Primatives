@@ -8,9 +8,7 @@ import random
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image, ImageDraw, ImageFont
 
-fnt = ImageFont.truetype("arial.ttf", 20)
-#ddsd
-
+fnt = ImageFont.truetype('Pillow/Tests/fonts/DejaVuSans.ttf', 20)
 
 # this is the size of ONE of our matrixes. 
 matrix_rows = 32 
