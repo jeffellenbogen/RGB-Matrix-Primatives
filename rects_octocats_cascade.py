@@ -81,7 +81,7 @@ def newImage(passedSlot):
 
   gapSpace = total_columns - (imageSize*imageSlots)
   gapSize = gapSpace / (imageSlots+1)
-  imageOffsetX = (passedSlot-1) * gapSize + imageSize *(passedSlot-1) + gapSize
+  imageOffsetX = (passedSlot-1) * gapSize + imageSize *(passedSlot-1) + gapSize + 1
   imageOffsetY = (total_rows - imageSize) // 2
 
   temp_image.paste(local_image, (imageOffsetX, imageOffsetY))
