@@ -41,26 +41,26 @@ drawRect = ImageDraw.Draw(image)
 drawCircle = ImageDraw.Draw(image)
 
 for i in range (total_rows/2+1):
-  randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
   drawRect.rectangle( (i,i,total_columns-i,total_rows-i), outline = bg_color ) 
   sleep(.03)
   matrix.SetImage(image, 0, 0)
   
 sleep(1)
 
+randomColor = random.randint(0,360)
+bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+
 for i in range (total_rows/2+1):
-  randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
   drawCircle.ellipse(( i + (total_columns - total_rows), i,total_rows-i, total_rows-i), outline = bg_color )
   sleep(.03)
   matrix.SetImage(image, 0, 0)
 
 sleep(1)    
 
+randomColor = random.randint(0,360)
+bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+
 for i in range (total_rows/2+1):
-  randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
   drawRect.rectangle( (i,i,total_columns-i,total_rows-i), outline = bg_color )
   sleep(.03)
   matrix.SetImage(image, 0, 0)
