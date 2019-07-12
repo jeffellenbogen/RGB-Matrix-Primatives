@@ -49,7 +49,7 @@ imageSize = 28
 def background():
   global temp_image
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+  bg_color ="hsl({}, 100%, 50%)".format(randomColor)
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,total_columns,total_rows), fill= bg_color)
   matrix.SetImage(temp_image,0,0)
@@ -91,7 +91,7 @@ def ScreenWipe(direction):
   wipeSpeed = .03
 
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+  bg_color ="hsl({}, 100%, 50%)".format(randomColor)
 
   #Vertical wipe
   if (direction == 1): 
