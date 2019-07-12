@@ -41,7 +41,7 @@ bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
 
-imageSize = 14
+imageSize = 13
 slot=1
 imageSlots = 4
 
@@ -134,8 +134,9 @@ while True:
     sleep(.25)
   if slot > 4:
     slot = 1
+  sleep(2)  
   ScreenWipe(random.randint(1,3))
-  sleep(2)
+  sleep(1)
 
 try:
   print("Press CTRL-C to stop")
