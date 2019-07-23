@@ -3,4 +3,4 @@ Working on creating a matrix of 32 x 32 RGB matrices made of 12 individual panel
 <img src="matrixOfMatrices.jpeg" width=350 align=center>
 
 
-
+## I've made some changes!
