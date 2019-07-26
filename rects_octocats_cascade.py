@@ -14,8 +14,8 @@ matrix_rows = 32
 matrix_columns = 32 
 
 # how many matrixes stacked horizontally and vertically 
-matrix_horizontal = 2 
-matrix_vertical = 1
+matrix_horizontal = 4 
+matrix_vertical = 3 
 
 total_rows = matrix_rows * matrix_vertical
 total_columns = matrix_columns * matrix_horizontal
@@ -26,9 +26,9 @@ options.cols = matrix_columns
 options.chain_length = matrix_horizontal
 options.parallel = matrix_vertical 
 
-options.hardware_mapping = 'adafruit-hat-pwm' 
+#options.hardware_mapping = 'adafruit-hat-pwm' 
 #options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat'
-#options.hardware_mapping = 'regular'  
+options.hardware_mapping = 'regular'  
 
 options.gpio_slowdown = 2
 
@@ -41,9 +41,9 @@ bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
 
-imageSize = 16
+imageSize = 28
 slot=1
-imageSlots = 3
+imageSlots = 4
 
 ###################################
 # Background
@@ -51,7 +51,7 @@ imageSlots = 3
 def background():
   global temp_image
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+  bg_color ="hsl({}, 100%, 30%)".format(randomColor)
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,total_columns,total_rows), fill= bg_color)
   matrix.SetImage(temp_image,0,0)
@@ -95,10 +95,10 @@ def ScreenWipe(direction):
   global temp_draw
   global total_rows
   global total_columns
-  wipeSpeed = .02
+  wipeSpeed = .004
 
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+  bg_color ="hsl({}, 100%, 30%)".format(randomColor)
 
   #Vertical wipe
   if (direction == 1): 
