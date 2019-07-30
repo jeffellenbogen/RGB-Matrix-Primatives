@@ -43,7 +43,7 @@ drawCircle = ImageDraw.Draw(image)
 
 while True:
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 10%)".format(randomColor)  
+  bg_color ="hsl({}, 100%, 50%)".format(randomColor)  
   for i in range (total_rows/2+1):
     drawRect.rectangle( (i,i,total_columns-i,total_rows-i), outline = bg_color ) 
     sleep(speed)
@@ -52,7 +52,7 @@ while True:
   sleep(pause)
 
   randomColor = random.randint(0,360)
-  bg_color ="hsl({}, 100%, 20%)".format(randomColor)
+  bg_color ="hsl({}, 100%, 50%)".format(randomColor)
 
   for i in range (total_rows/2+1):
     circleOffset = ((total_columns - total_rows) // 2)
