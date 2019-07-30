@@ -8,7 +8,10 @@ import random
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image, ImageDraw, ImageFont
 
+PIL.ImageFont.load_default()
+
 fnt = ImageFont.truetype('Pillow/Tests/fonts/arial.ttf', 18)
+
 
 # this is the size of ONE of our matrixes. 
 matrix_rows = 32 
@@ -64,7 +67,7 @@ while True:
   black = (0,0,0)
   #text_color = "hsl({}, 100%, 50%)".format(colorInc)  
   text_color = white  
-  drawText.text((2,5), " NAR IS COOL ", font=fnt, fill=text_color)
+  drawText.text((2,5), " NAR IS COOL ", fill=text_color)
   matrix.SetImage(image, 0, 0)    
   sleep(pause)
 
