@@ -9,7 +9,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image, ImageDraw, ImageFont
 
 
-fnt = ImageFont.truetype('Pillow/Tests/fonts/arial.ttf', 30)
+fnt = ImageFont.truetype('Pillow/Tests/fonts/arial.ttf', 24)
 
 
 # this is the size of ONE of our matrixes. 
