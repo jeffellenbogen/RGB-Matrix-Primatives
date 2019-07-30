@@ -15,8 +15,8 @@ matrix_rows = 32
 matrix_columns = 32 
 
 # how many matrixes stacked horizontally and vertically 
-matrix_horizontal = 4 
-matrix_vertical = 3
+matrix_horizontal = 4
+matrix_vertical = 2
 
 total_rows = matrix_rows * matrix_vertical
 total_columns = matrix_columns * matrix_horizontal
@@ -64,7 +64,7 @@ while True:
   black = (0,0,0)
   #text_color = "hsl({}, 100%, 50%)".format(colorInc)  
   text_color = white  
-  drawText.text((4,5), "TECHNOLOGY", font=fnt, fill=text_color)
+  drawText.text((2,5), " NAR IS COOL ", font=fnt, fill=text_color)
   matrix.SetImage(image, 0, 0)    
   sleep(pause)
 
