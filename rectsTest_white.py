@@ -48,8 +48,8 @@ draw = ImageDraw.Draw(image)
 
 while True:
 
-    #draw.rectangle( (i,i,total_columns-i, total_rows-i), outline = white)
-    draw.rectangle( (i,i,total_columns-i,total_rows-i), fill = (255,255,255 )
+  
+    draw.rectangle( (i,i,total_columns-i,total_rows-i), fill = white)
     matrix.SetImage(image, 0, 0)
   
 
