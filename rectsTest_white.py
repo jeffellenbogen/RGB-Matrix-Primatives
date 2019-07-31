@@ -49,7 +49,7 @@ draw = ImageDraw.Draw(image)
 while True:
 
   
-    draw.rectangle( (0,0,total_columns,total_rows), fill = red)
+    draw.rectangle( (0,0,total_columns,total_rows), fill = white)
     matrix.SetImage(image, 0, 0)
   
 
