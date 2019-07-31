@@ -66,8 +66,9 @@ while True:
   black = (0,0,0)
   #text_color = "hsl({}, 100%, 50%)".format(colorInc)  
   text_color = white  
-  drawText.text((5,5), "TECHNOLOGY", font = fntSM, fill=text_color)
-  drawText.text((14,35), "IS COOL!", font = fntLG, fill=text_color) 
+  drawText.multiline_text((5,5),"TECHNOLOGY IS COOL!",font = fntLG, fill = text_color, align = center, spacing = 10)
+  #drawText.text((5,5), "TECHNOLOGY", font = fntSM, fill=text_color)
+  #drawText.text((14,35), "IS COOL!", font = fntLG, fill=text_color) 
   matrix.SetImage(image, 0, 0)    
   sleep(pause)
 
