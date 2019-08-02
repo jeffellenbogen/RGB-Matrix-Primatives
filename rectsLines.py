@@ -51,12 +51,12 @@ draw = ImageDraw.Draw(image)
 
 
 while True:
-  for y in range (0, total_rows, 4):
+  for y in range (0, total_rows, 8):
     randomColor = random.randint(0,360)
     bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
-    for x in range (0, total_columns, 4):
+    for x in range (0, total_columns, 8):
        draw.line( (0,y,x,total_rows), fill = bg_color)
-       sleep(.02)
+       sleep(.004)
        matrix.SetImage(image, 0, 0)
     sleep(.02)
     
