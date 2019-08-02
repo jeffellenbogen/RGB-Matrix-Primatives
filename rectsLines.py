@@ -48,8 +48,8 @@ draw = ImageDraw.Draw(image)
 
 #linewidth = random.randint(5,20)
 #offset = random.randint(5,40)
-yIncrementer = 8
-xIncrementer = 8
+yIncrementer = 20
+xIncrementer = 10
 
 while True:
   for y in range (0, total_rows + yIncrementer, yIncrementer):
