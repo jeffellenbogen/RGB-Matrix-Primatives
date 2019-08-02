@@ -48,10 +48,11 @@ draw = ImageDraw.Draw(image)
 
 #linewidth = random.randint(5,20)
 #offset = random.randint(5,40)
-yIncrementer = 20
-xIncrementer = 10
+
 
 while True:
+  xIncrementer = random.randint(2,20)
+  yIncrementer = random.randint(2,20)
   for y in range (0, total_rows + yIncrementer, yIncrementer):
     randomColor = random.randint(0,360)
     bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
@@ -59,6 +60,7 @@ while True:
        draw.line( (0,y,x,total_rows), fill = bg_color)
        draw.line( (0,total_rows-y,x,0), fill = bg_color)
        draw.line( (total_columns,y,total_columns - x,total_rows), fill = bg_color)
+       draw.line( (total_columns,total_rows-y,total_columns - x,0), fill = bg_color)
        sleep(.01)
        matrix.SetImage(image, 0, 0)
     sleep(.01)
