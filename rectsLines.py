@@ -53,8 +53,10 @@ while True:
   for y in range (0, total_rows, 3):
     for x in range (0, total_columns, 3):
        draw.line( (0,y,x,total_rows), fill = blue)
+       sleep(.1)
+       matrix.SetImage(image, 0, 0)
     sleep(.1)
-    matrix.SetImage(image, 0, 0)
+    
   
  
 
