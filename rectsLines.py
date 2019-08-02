@@ -57,7 +57,7 @@ while True:
     bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
     for x in range (0, total_columns + xIncrementer, xIncrementer):
        draw.line( (0,y,x,total_rows), fill = bg_color)
-       draw.line( (total_columns,y,x,0), fill = bg_color)
+       draw.line( (total_columns,y,total_columns - x,0), fill = bg_color)
        sleep(.004)
        matrix.SetImage(image, 0, 0)
     sleep(.02)
