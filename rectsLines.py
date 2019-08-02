@@ -40,6 +40,8 @@ green = (0,255,0)
 white = (250,250,250)
 bg_color = (255, 255, 255)
 
+counter = 1
+
 ###################################
 # Main loop 
 ###################################
@@ -53,9 +55,13 @@ draw = ImageDraw.Draw(image)
 while True:
   xIncrementer = random.randint(2,20)
   yIncrementer = random.randint(2,20)
+  
   for y in range (0, total_rows + yIncrementer, yIncrementer):
     randomColor = random.randint(0,360)
-    bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
+    if counter % 2 == 0:
+      bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
+    else:
+      bg_color = (0,0,0)
     for x in range (0, total_columns + xIncrementer, xIncrementer):
        draw.line( (0,y,x,total_rows), fill = bg_color)
        draw.line( (0,total_rows-y,x,0), fill = bg_color)
@@ -64,7 +70,7 @@ while True:
        sleep(.01)
        matrix.SetImage(image, 0, 0)
     sleep(.01)
-    
+  counter+=1  
   
  
 
