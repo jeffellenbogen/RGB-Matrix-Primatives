@@ -58,7 +58,7 @@ while True:
   
   for y in range (0, total_rows + yIncrementer, yIncrementer):
     randomColor = random.randint(0,360)
-    if counter % 2 == 0:
+    if counter % 2 == 1:
       bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
     else:
       bg_color = (0,0,0)
