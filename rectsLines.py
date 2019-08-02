@@ -50,10 +50,10 @@ draw = ImageDraw.Draw(image)
 
 
 while True:
-  for y in range (0, total_rows, 2):
-    for x in range (0, total_columns, 2):
+  for y in range (0, total_rows, 3):
+    for x in range (0, total_columns, 3):
        draw.line( (0,y,x,total_rows), fill = blue)
-    sleep(.01)
+    sleep(.1)
     matrix.SetImage(image, 0, 0)
   
  
