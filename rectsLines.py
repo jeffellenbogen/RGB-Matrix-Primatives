@@ -48,14 +48,16 @@ draw = ImageDraw.Draw(image)
 
 #linewidth = random.randint(5,20)
 #offset = random.randint(5,40)
-
+yIncrementer = 8
+xIncrementer = 8
 
 while True:
-  for y in range (0, total_rows, 8):
+  for y in range (0, total_rows + yIncrementer, yIncrementer):
     randomColor = random.randint(0,360)
     bg_color ="hsl({}, 100%, 50%)".format(randomColor) 
-    for x in range (0, total_columns, 8):
+    for x in range (0, total_columns + xIncrementer, xIncrementer):
        draw.line( (0,y,x,total_rows), fill = bg_color)
+       draw.line( (total_columns,y,x,0), fill = bg_color)
        sleep(.004)
        matrix.SetImage(image, 0, 0)
     sleep(.02)
