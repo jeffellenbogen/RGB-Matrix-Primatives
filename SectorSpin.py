@@ -55,12 +55,13 @@ image = Image.new("RGB", (total_columns,total_rows))
 draw = ImageDraw.Draw(image)
 
 while True:
-  
-  draw.pieslice((20,20, 60, 60),345,15,outline = blue, fill = red)
-  #rotate a second black rectangle to sectorAngle degrees + rotation degrees based on for loop for spinning effect
-  # refer to https://stackoverflow.com/questions/34747946/rotating-a-square-in-pil for more info on drawing Polygons with vertices
-  sleep(.03)
-  matrix.SetImage(image, 0, 0)
+  for i in range (sectors):
+    draw.pieslice((20,20, 60, 60),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
+    sleep(.25)
+    matrix.SetImage(image, 0, 0)
+    draw.pieslice((20,20, 60, 60),sectorAngle * i, sectorAngle * (i+1),outline = black, fill = black)
+    
+
 
 
 try:
