@@ -53,8 +53,9 @@ image = Image.new("RGB", (total_columns,total_rows))
 draw = ImageDraw.Draw(image)
 
 while True:
-  draw.ellipse((0,0,2 * radius, 2 * radius), outline = white, fill=red)
-  draw.rectangle((0,radius,2 * radius,2 * radius), outline = black, fill=black)
+  #draw.ellipse((0,0,2 * radius, 2 * radius), outline = white, fill=red)
+  #draw.rectangle((0,radius,2 * radius,2 * radius), outline = black, fill=black)
+  draw.pieslice((20,20, 60, 60),0,30,outline = blue, fill = red)
   #rotate a second black rectangle to sectorAngle degrees + rotation degrees based on for loop for spinning effect
   # refer to https://stackoverflow.com/questions/34747946/rotating-a-square-in-pil for more info on drawing Polygons with vertices
   sleep(.03)
