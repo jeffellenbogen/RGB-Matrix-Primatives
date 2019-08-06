@@ -54,8 +54,8 @@ draw = ImageDraw.Draw(image)
 
 while True:
   flowersize = random.randint(30,80)
-  xSeed = random.randint(flowersize, total_columns - flowersize)
-  ySeed = random.randint(flowersize, total_rows - flowersize)
+  xSeed = random.randint(0, total_columns)
+  ySeed = random.randint(0, total_rows)
   for i in range (sectors):
     draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
     sleep(.05)
