@@ -56,8 +56,8 @@ while True:
   draw.rectangle((0,0,2 * radius,2 * radius), outline = black, fill=black)
   #rotate a second black rectangle to sectorAngle degrees + rotation degrees based on for loop for spinning effect
   # refer to https://stackoverflow.com/questions/34747946/rotating-a-square-in-pil for more info on drawing Polygons with vertices
-    sleep(.03)
-    matrix.SetImage(image, 0, 0)
+  sleep(.03)
+  matrix.SetImage(image, 0, 0)
 
 
 try:
