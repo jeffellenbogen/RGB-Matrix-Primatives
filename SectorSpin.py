@@ -51,7 +51,7 @@ sectorAngle = 360 / sectors
 # Main loop 
 ###################################
 image = Image.new("RGB", (total_columns,total_rows))
-flower = Image.new("RGB", (flowersize, flowersize)
+#flower = Image.new("RGB", (flowersize, flowersize)
 draw = ImageDraw.Draw(image)
 
 while True:
