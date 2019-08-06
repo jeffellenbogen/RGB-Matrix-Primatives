@@ -53,11 +53,11 @@ image = Image.new("RGB", (total_columns,total_rows))
 draw = ImageDraw.Draw(image)
 
 while True:
+  xSeed = random.randint(flowersize, total_columns - flowersize)
+  ySeed = random.randint(flowersize, total_rows - flowersize)
   for i in range (sectors):
-    xSeed = random.randint(flowersize, total_columns - flowersize)
-    ySeed = random.randint(flowersize, total_rows - flowersize)
     draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
-    sleep(.05)
+    sleep(.25)
     matrix.SetImage(image, 0, 0)
     draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = black, fill = black)
 
