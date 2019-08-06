@@ -42,9 +42,7 @@ white = (250,250,250)
 black = (0,0,0)
 
 flowersize = 20
-radius = 6
-rotation = 0
-sectors = 8
+sectors = 12
 sectorAngle = 360 / sectors
 
 ###################################
@@ -56,11 +54,11 @@ draw = ImageDraw.Draw(image)
 
 while True:
   for i in range (sectors):
-    draw.pieslice((20,20, 60, 60),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
-    sleep(.25)
+    draw.pieslice((0,0, flowersize, flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
+    sleep(.05)
     matrix.SetImage(image, 0, 0)
     draw.pieslice((20,20, 60, 60),sectorAngle * i, sectorAngle * (i+1),outline = black, fill = black)
-    
+
 
 
 
