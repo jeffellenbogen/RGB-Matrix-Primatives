@@ -42,7 +42,6 @@ white = (250,250,250)
 black = (0,0,0)
 
 flowersize = 20
-edgeBuffer = 10
 sectors = 12
 sectorAngle = 360 / sectors
 
@@ -55,8 +54,8 @@ draw = ImageDraw.Draw(image)
 
 while True:
   for i in range (sectors):
-    xSeed = random.randint(edgeBuffer, total_columns - edgeBuffer)
-    ySeed = rrandom.randint(edgeBuffer, total_rows - edgeBuffer)
+    xSeed = random.randint(flowersize, total_columns - flowersize)
+    ySeed = random.randint(flowersize, total_rows - flowersize)
     draw.pieslice((xSeed,ySeed, flowersize, flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
     sleep(.05)
     matrix.SetImage(image, 0, 0)
