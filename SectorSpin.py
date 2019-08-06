@@ -39,6 +39,7 @@ red = (255,0,0)
 blue = (0,0,255)
 green = (0,255,0)
 white = (250,250,250)
+black = (0,0,0)
 
 radius = 6
 rotation = 0
