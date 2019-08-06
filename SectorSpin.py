@@ -56,10 +56,10 @@ while True:
   for i in range (sectors):
     xSeed = random.randint(flowersize, total_columns - flowersize)
     ySeed = random.randint(flowersize, total_rows - flowersize)
-    draw.pieslice((xSeed,ySeed, flowersize, flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
+    draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
     sleep(.05)
     matrix.SetImage(image, 0, 0)
-    draw.pieslice((xSeed,ySeed, flowersize, flowersize),sectorAngle * i, sectorAngle * (i+1),outline = black, fill = black)
+    draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = black, fill = black)
 
 
 
