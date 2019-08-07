@@ -81,13 +81,13 @@ draw = ImageDraw.Draw(image)
 while True:
   for i in range(numFlowerColumns):
     for j in range(numFlowerRows):
-      if (i % 2 == 1) & (j % 2 == 1):
+      if (i % 2 == 0) & (j % 2 == 0):
         SpinSector((i*spacingFlowerRows),(j*spacingFlowerColumns))
   matrix.SetImage(image, 0, 0)
   sleep(spinSpeed)
   for i in range(numFlowerColumns):
     for j in range(numFlowerRows):
-      if (i % 2 == 1) & (j % 2 == 1):
+      if (i % 2 == 0) & (j % 2 == 0):
         EraseSector((i*spacingFlowerRows),(j*spacingFlowerColumns))
   matrix.SetImage(image, 0, 0)
   
