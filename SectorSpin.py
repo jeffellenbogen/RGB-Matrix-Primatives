@@ -54,22 +54,6 @@ spacingFlowerRows = total_columns / (numFlowerColumns * 2 + 1) # multiply by 2 a
 spacingFlowerColumns = total_rows / (numFlowerRows * 2 + 1)
 
 
-###################################
-# SpinSector
-###################################
-def SpinSector(xSeed, ySeed):
-  for i in range (sectors):
-    draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
-    #sleep(spinSpeed)
-    
-###################################
-# EraseSector
-###################################
-def EraseSector(xSeed, ySeed):
-  for i in range (sectors):
-    draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i - 20, sectorAngle * (i+1) + 20,outline = black, fill = black)
-
-
 
 ###################################
 # Main loop 
@@ -80,17 +64,20 @@ draw = ImageDraw.Draw(image)
 
 
 while True:
-  for i in range(spacingFlowerColumns):
-    for j in range(spacingFlowerRows):
-      if (i % 2 == 0) & (j % 2 == 0):
-        SpinSector((i*spacingFlowerRows),(j*spacingFlowerColumns))
-  matrix.SetImage(image, 0, 0)
-  sleep(spinSpeed)
-  for i in range(spacingFlowerColumns):
-    for j in range(spacingFlowerRows):
-      if (i % 2 == 0) & (j % 2 == 0):
-        EraseSector((i*spacingFlowerRows),(j*spacingFlowerColumns))
-  matrix.SetImage(image, 0, 0)
+  for k in range (sectors):
+    for i in range(spacingFlowerColumns):
+      for j in range(spacingFlowerRows):
+        if (i % 2 == 0) & (j % 2 == 0):
+          draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
+    matrix.SetImage(image, 0, 0)
+    sleep(spinSpeed)
+    for i in range(spacingFlowerColumns):
+      for j in range(spacingFlowerRows):
+        if (i % 2 == 0) & (j % 2 == 0):
+          draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i - 20, sectorAngle * (i+1) + 20,outline = black, fill = black)
+    matrix.SetImage(image, 0, 0)
+
+
   
   
 
