@@ -48,9 +48,9 @@ spinSpeed = .05
 sectors = 12
 sectorAngle = 360 / sectors
 
-flowersize = 60
-numFlowerRows = 2
-numFlowerColumns = 6
+flowersize = 80
+numFlowerRows = 1
+numFlowerColumns = 2
 #spacingFlowerRows = total_columns / (numFlowerColumns * 2 + 1) # multiply by 2 and add one to account for flowers and spaces between
 #spacingFlowerColumns = total_rows / (numFlowerRows * 2 + 1)
 
