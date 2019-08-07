@@ -82,7 +82,7 @@ while True:
 
     elapsed_time=0
     last_reset=time.time()
-    draw.rectangle(0,0,total_columns,total_rows, fill=black)
+    draw.rectangle((0,0,total_columns,total_rows), fill=black)
     matrix.SetImage(image,0,0)
   elapsed_time = time.time()-last_reset  
 
