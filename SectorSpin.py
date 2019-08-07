@@ -42,7 +42,7 @@ white = (250,250,250)
 black = (0,0,0)
 
 
-spinSpeed = .05
+spinSpeed = .1
 
 sectors = 12
 sectorAngle = 360 / sectors
@@ -60,6 +60,7 @@ spacingFlowerColumns = total_rows / (numFlowerRows * 2 + 1)
 def SpinSector(xSeed, ySeed):
   for i in range (sectors):
     draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
+    sleep(spinSpeed)
     
 ###################################
 # EraseSector
