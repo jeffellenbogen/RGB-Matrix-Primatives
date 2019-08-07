@@ -1,7 +1,7 @@
 
 # Used in main loop
 from time import sleep
-import 
+import random
 import time
 
 ###################################
