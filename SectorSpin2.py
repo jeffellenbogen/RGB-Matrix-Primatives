@@ -43,14 +43,14 @@ white_fade = (75,75,75)
 black = (0,0,0)
 
 
-spinSpeed = .05
+spinSpeed = .02
 
 sectors = 6
 sectorAngle = 360 / sectors
 
-flowersize = 40
-numFlowerRows = 2
-numFlowerColumns = 4
+flowersize = 10
+numFlowerRows = 4
+numFlowerColumns = 7
 #spacingFlowerRows = total_columns / (numFlowerColumns * 2 + 1) # multiply by 2 and add one to account for flowers and spaces between
 #spacingFlowerColumns = total_rows / (numFlowerRows * 2 + 1)
 
