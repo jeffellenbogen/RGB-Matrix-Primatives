@@ -42,8 +42,33 @@ white = (250,250,250)
 black = (0,0,0)
 
 
+spinSpeed = .05
+
 sectors = 12
 sectorAngle = 360 / sectors
+
+flowersize = 20
+numFlowerRows = 2
+numFlowerColumns = 3
+spacingFlowerRows = total_columns / (numFlowerColumns * 2 + 1) # multiply by 2 and add one to account for flowers and spaces between
+spacingFlowerColumns = total_rows / (numFlowerRows * 2 + 1)
+
+
+###################################
+# SpinSector
+###################################
+def SpinSector(xSeed, ySeed):
+  for i in range (sectors):
+    draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
+    
+###################################
+# EraseSector
+###################################
+def EraseSector(xSeed, ySeed):
+  for i in range (sectors):
+    draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i - 20, sectorAngle * (i+1) + 20,outline = black, fill = black)
+
+
 
 ###################################
 # Main loop 
@@ -52,17 +77,21 @@ image = Image.new("RGB", (total_columns,total_rows))
 #flower = Image.new("RGB", (flowersize, flowersize)
 draw = ImageDraw.Draw(image)
 
+
 while True:
-  flowersize = random.randint(30,80)
-  xSeed = random.randint(0, total_columns)
-  ySeed = random.randint(0, total_rows)
-  for i in range (sectors):
-    draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
-    sleep(.05)
-    matrix.SetImage(image, 0, 0)
-    draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i - 20, sectorAngle * (i+1) + 20,outline = black, fill = black)
-
-
+  for i in range(numFlowerColumns):
+    for j in range(numFlowerRows):
+      if (i % 2 == 1) & (j % 2 == 1):
+        SpinSector((i*spacingFlowerRows),(j*spacingFlowerColumns)
+  matrix.SetImage(image, 0, 0)
+  sleep(spinSpeed)
+  for i in range(numFlowerColumns):
+    for j in range(numFlowerRows):
+      if (i % 2 == 1) & (j % 2 == 1):
+        EraseSector((i*spacingFlowerRows),(j*spacingFlowerColumns)
+  matrix.SetImage(image, 0, 0)
+  
+  
 
 
 try:
