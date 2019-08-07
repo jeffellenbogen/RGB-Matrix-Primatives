@@ -42,7 +42,7 @@ white = (250,250,250)
 black = (0,0,0)
 
 
-spinSpeed = .1
+spinSpeed = .05
 
 sectors = 12
 sectorAngle = 360 / sectors
