@@ -108,7 +108,7 @@ while True:
     matrix.SetImage(image, 0, 0)
 
     ###This sections adds a blackout of the faded sector
-    '''sleep(spinSpeed)
+    sleep(spinSpeed)
     for i in range(numFlowerColumns):
       for j in range(numFlowerRows):
         x1=(i+1)*spacingFlowerRows + i*flowersize
@@ -116,7 +116,7 @@ while True:
         x2=(i+1)*spacingFlowerRows + i*flowersize + flowersize
         y2=(j+1)*spacingFlowerColumns + j*flowersize + flowersize
         draw.pieslice((x1,y1,x2,y2),sectorAngle * (k-2), sectorAngle * (k-1), fill =  black)
-    matrix.SetImage(image, 0, 0)'''
+    matrix.SetImage(image, 0, 0)
 
   
 
