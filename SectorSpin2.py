@@ -1,7 +1,8 @@
 
 # Used in main loop
 from time import sleep
-import random
+import 
+import time
 
 ###################################
 # Graphics imports, constants and structures
@@ -34,6 +35,10 @@ options.hardware_mapping = 'regular'
 
 options.gpio_slowdown = 2
 
+start = time.time()
+elapsed_time = 0
+last_reset = 0
+
 matrix = RGBMatrix(options = options)
 red = (255,0,0)
 blue = (0,0,255)
@@ -46,18 +51,13 @@ black = (0,0,0)
 spinSpeed = .05
 
 sectors = 12
-sectorAngle = 360 / sectors
-
 flowersize = 120
 numFlowerRows = 1
 numFlowerColumns = 1
-#spacingFlowerRows = total_columns / (numFlowerColumns * 2 + 1) # multiply by 2 and add one to account for flowers and spaces between
-#spacingFlowerColumns = total_rows / (numFlowerRows * 2 + 1)
 
+sectorAngle = 360 / sectors
 spacingFlowerRows = (total_columns - (flowersize * numFlowerColumns))/ (numFlowerColumns + 1)
 spacingFlowerColumns = (total_rows - (flowersize * numFlowerRows)) / (numFlowerRows + 1)
-print(spacingFlowerRows)
-print(spacingFlowerColumns)
 
 
 
@@ -70,6 +70,20 @@ draw = ImageDraw.Draw(image)
 
 
 while True:
+  if (elapsed_time > 5):
+    sectors = random.randint(3,12)
+    flowersize = random.randint(10,60)
+    numFlowerRows = random.randint(1,6)
+    numFlowerColumns = random.randint(1,4)
+
+    sectorAngle = 360 / sectors
+    spacingFlowerRows = (total_columns - (flowersize * numFlowerColumns))/ (numFlowerColumns + 1)
+    spacingFlowerColumns = (total_rows - (flowersize * numFlowerRows)) / (numFlowerRows + 1)
+
+    elapsed_time=0
+    last_reset=time.time()
+  elapsed_time = time.time()-last_reset  
+
   randomColor = random.randint(0,360) 
   fill_color = "hsl({}, 100%, 50%)".format(randomColor) 
   fade_color = "hsl({}, 100%, 20%)".format(randomColor) 
@@ -92,6 +106,8 @@ while True:
         y2=(j+1)*spacingFlowerColumns + j*flowersize + flowersize
         draw.pieslice((x1,y1,x2,y2),sectorAngle * (k-1), sectorAngle * k,outline = white_fade, fill =  fade_color)
     matrix.SetImage(image, 0, 0)
+
+    ###This sections adds a blackout of the faded sector
     '''sleep(spinSpeed)
     for i in range(numFlowerColumns):
       for j in range(numFlowerRows):
