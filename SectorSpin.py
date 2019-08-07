@@ -69,13 +69,13 @@ while True:
   for k in range (sectors):
     for i in range(numFlowerColumns * 2 + 1):
       for j in range(numFlowerRows * 2 + 1):
-        if (i % 2 == 0) & (j % 2 == 0):
+        if (i % 2 == 1) | (j % 2 == 1):
           draw.pieslice((i*spacingFlowerColumns,j*spacingFlowerRows, i*spacingFlowerColumns + flowersize, j*spacingFlowerRows + flowersize),sectorAngle * k, sectorAngle * (k+1),outline = blue, fill = red)
     matrix.SetImage(image, 0, 0)
     sleep(spinSpeed)
     for i in range(numFlowerColumns * 2 + 1):
       for j in range(numFlowerRows * 2 + 1):
-        if (i % 2 == 0) & (j % 2 == 0):
+        if (i % 2 == 1) | (j % 2 == 1):
           draw.pieslice((i*spacingFlowerColumns,j*spacingFlowerRows, i*spacingFlowerColumns + flowersize, j*spacingFlowerRows + flowersize),sectorAngle * k - 20, sectorAngle * (k+1) + 20,outline = black, fill = black)
     matrix.SetImage(image, 0, 0)
 
