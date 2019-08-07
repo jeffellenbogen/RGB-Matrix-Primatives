@@ -60,7 +60,7 @@ spacingFlowerColumns = total_rows / (numFlowerRows * 2 + 1)
 def SpinSector(xSeed, ySeed):
   for i in range (sectors):
     draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
-    sleep(spinSpeed)
+    #sleep(spinSpeed)
     
 ###################################
 # EraseSector
