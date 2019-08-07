@@ -78,7 +78,7 @@ while True:
     sleep(spinSpeed)
     for i in range(numFlowerColumns):
       for j in range(numFlowerRows):
-        #draw.pieslice((spacingFlowerRows*(i+1)),(spacingFlowerColumns*(j+1)),(spacingFlowerRows*(i+1))+flowersize,(spacingFlowerColumns*(j+1))+flowersize, sectorAngle * k - 20, sectorAngle * (k+1) + 20, outline = black, fill = black)
+        draw.pieslice((spacingFlowerRows*(i+1)),(spacingFlowerColumns*(j+1)),(spacingFlowerRows*(i+1))+flowersize,(spacingFlowerColumns*(j+1))+flowersize, sectorAngle * k - 20, sectorAngle * (k+1) + 20, outline = black, fill = black)
     matrix.SetImage(image, 0, 0)
 
 
