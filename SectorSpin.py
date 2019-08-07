@@ -68,13 +68,13 @@ while True:
     for i in range(spacingFlowerColumns):
       for j in range(spacingFlowerRows):
         if (i % 2 == 0) & (j % 2 == 0):
-          draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i, sectorAngle * (i+1),outline = blue, fill = red)
+          draw.pieslice((i,j, i + flowersize, j + flowersize),sectorAngle * k, sectorAngle * (k+1),outline = blue, fill = red)
     matrix.SetImage(image, 0, 0)
     sleep(spinSpeed)
     for i in range(spacingFlowerColumns):
       for j in range(spacingFlowerRows):
         if (i % 2 == 0) & (j % 2 == 0):
-          draw.pieslice((xSeed,ySeed, xSeed + flowersize, ySeed + flowersize),sectorAngle * i - 20, sectorAngle * (i+1) + 20,outline = black, fill = black)
+          draw.pieslice((i,j, i + flowersize, j + flowersize),sectorAngle * k - 20, sectorAngle * (k+1) + 20,outline = black, fill = black)
     matrix.SetImage(image, 0, 0)
 
 
