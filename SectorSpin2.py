@@ -70,7 +70,8 @@ draw = ImageDraw.Draw(image)
 
 while True:
   randomColor = random.randint(0,360) 
-  fill_color = "hsl({}, 100%, 20%)".format(randomColor) 
+  fill_color = "hsl({}, 100%, 50%)".format(randomColor) 
+  fade_color = "hsl({}, 100%, 30%)".format(randomColor) 
   for k in range (sectors):
     for i in range(numFlowerColumns):
       for j in range(numFlowerRows):
@@ -79,7 +80,7 @@ while True:
         y1=(j+1)*spacingFlowerColumns + j*flowersize
         x2=(i+1)*spacingFlowerRows + i*flowersize + flowersize
         y2=(j+1)*spacingFlowerColumns + j*flowersize + flowersize
-        draw.pieslice((x1,y1,x2,y2),sectorAngle * k, sectorAngle * (k+1),outline = fill_color, fill = fill_color)
+        draw.pieslice((x1,y1,x2,y2),sectorAngle * k, sectorAngle * (k+1),outline = white, fill = fill_color)
     matrix.SetImage(image, 0, 0)
     sleep(spinSpeed)
     for i in range(numFlowerColumns):
@@ -88,7 +89,7 @@ while True:
         y1=(j+1)*spacingFlowerColumns + j*flowersize
         x2=(i+1)*spacingFlowerRows + i*flowersize + flowersize
         y2=(j+1)*spacingFlowerColumns + j*flowersize + flowersize
-        draw.pieslice((x1,y1,x2,y2),sectorAngle * k - 20, sectorAngle * (k+1) + 20,outline = black, fill = black)
+        draw.pieslice((x1,y1,x2,y2),sectorAngle * k - 20, sectorAngle * (k+1) + 20,outline = black, fill =  fade_color)
     matrix.SetImage(image, 0, 0)
 
 
