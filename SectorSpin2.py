@@ -43,7 +43,7 @@ white_fade = (75,75,75)
 black = (0,0,0)
 
 
-spinSpeed = .01
+spinSpeed = .05
 
 sectors = 10
 sectorAngle = 360 / sectors
