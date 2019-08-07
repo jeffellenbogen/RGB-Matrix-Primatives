@@ -47,9 +47,9 @@ spinSpeed = .05
 sectors = 6
 sectorAngle = 360 / sectors
 
-flowersize = 64
-numFlowerRows = 3
-numFlowerColumns = 5
+flowersize = 40
+numFlowerRows = 2
+numFlowerColumns = 4
 #spacingFlowerRows = total_columns / (numFlowerColumns * 2 + 1) # multiply by 2 and add one to account for flowers and spaces between
 #spacingFlowerColumns = total_rows / (numFlowerRows * 2 + 1)
 
@@ -77,7 +77,7 @@ while True:
         y1=(j+1)*spacingFlowerColumns + j*flowersize
         x2=(i+1)*spacingFlowerRows + i*flowersize + flowersize
         y2=(j+1)*spacingFlowerColumns + j*flowersize + flowersize
-        draw.pieslice((x1,y1,x2,y2),sectorAngle * k, sectorAngle * (k+1),outline = blue, fill = red)
+        draw.pieslice((x1,y1,x2,y2),sectorAngle * k, sectorAngle * (k+1),outline = red, fill = blue)
     matrix.SetImage(image, 0, 0)
     sleep(spinSpeed)
     for i in range(numFlowerColumns):
