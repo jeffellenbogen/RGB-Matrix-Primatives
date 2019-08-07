@@ -82,17 +82,16 @@ while True:
   for i in range(numFlowerColumns):
     for j in range(numFlowerRows):
       if (i % 2 == 1) & (j % 2 == 1):
-        SpinSector((i*spacingFlowerRows),(j*spacingFlowerColumns)
+        SpinSector((i*spacingFlowerRows),(j*spacingFlowerColumns))
   matrix.SetImage(image, 0, 0)
   sleep(spinSpeed)
   for i in range(numFlowerColumns):
     for j in range(numFlowerRows):
       if (i % 2 == 1) & (j % 2 == 1):
-        EraseSector((i*spacingFlowerRows),(j*spacingFlowerColumns)
+        EraseSector((i*spacingFlowerRows),(j*spacingFlowerColumns))
   matrix.SetImage(image, 0, 0)
   
   
-
 
 try:
   print("Press CTRL-C to stop")
