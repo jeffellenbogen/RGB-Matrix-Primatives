@@ -45,12 +45,12 @@ black = (0,0,0)
 
 spinSpeed = .02
 
-sectors = 12
+sectors = 10
 sectorAngle = 360 / sectors
 
-flowersize = 20
+flowersize = 30
 numFlowerRows = 4
-numFlowerColumns = 7
+numFlowerColumns = 8
 #spacingFlowerRows = total_columns / (numFlowerColumns * 2 + 1) # multiply by 2 and add one to account for flowers and spaces between
 #spacingFlowerColumns = total_rows / (numFlowerRows * 2 + 1)
 
@@ -72,7 +72,7 @@ draw = ImageDraw.Draw(image)
 while True:
   randomColor = random.randint(0,360) 
   fill_color = "hsl({}, 100%, 50%)".format(randomColor) 
-  fade_color = "hsl({}, 100%, 30%)".format(randomColor) 
+  fade_color = "hsl({}, 100%, 20%)".format(randomColor) 
   for k in range (sectors):
     for i in range(numFlowerColumns):
       for j in range(numFlowerRows):
