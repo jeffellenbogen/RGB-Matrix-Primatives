@@ -87,8 +87,8 @@ while True:
   elapsed_time = time.time()-last_reset  
 
   randomColor = random.randint(0,360) 
-  fill_color = "hsl({}, 30%, 50%)".format(randomColor) 
-  fade_color = "hsl({}, 30%, 20%)".format(randomColor) 
+  fill_color = "hsl({}, 100%, 20%)".format(randomColor) 
+  fade_color = "hsl({}, 100%, 10%)".format(randomColor) 
   for k in range (sectors):
     for i in range(numFlowerColumns):
       for j in range(numFlowerRows):
