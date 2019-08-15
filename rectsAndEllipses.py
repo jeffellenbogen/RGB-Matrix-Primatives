@@ -54,7 +54,7 @@ draw = ImageDraw.Draw(image)
 
 
 while True:
-  incrementer = random.randint(1,10)
+  incrementer = random.randint(2,10)
   lineWidth = random.randint(1,incrementer/2)
   randomColor = random.randint(0,360)
   rectColor ="hsl({}, 100%, 50%)".format(randomColor) 
@@ -69,12 +69,6 @@ while True:
       draw.ellipse((xCenterPt- i - incrementer/2 - j,yCenterPt - i - incrementer/2 - j,xCenterPt + i + incrementer/2 + j,yCenterPt + i + incrementer/2 + j), outline = (ellipseColor))
       matrix.SetImage(image, 0, 0)  
     sleep (.05)
-  ########################################
-  # Erase rectangles that go beyond the largest circle
-  #########################################  
-  for i in range (total_rows/2, total_rows):
-    draw.rectangle((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = (white))
-  matrix.SetImage(image, 0, 0)
 
   ########################################
   # Erase whole matrix by setting to black
