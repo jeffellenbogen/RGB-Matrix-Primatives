@@ -37,9 +37,9 @@ red = (255,0,0)
 blue = (0,0,255)
 black = (0,0,0)
 
+donutSize = random.randint(10,30)
 xCenterPt = random.randint(0,total_columns)
 yCenterPt = random.randint(0,total_rows)
-donutSize = random.randint(6,60)
 
 speed = .05
 pause = 1
@@ -50,10 +50,10 @@ drawCircle = ImageDraw.Draw(image)
 drawPoint = ImageDraw.Draw(image)
 
 while True:
-  xCenterPt = random.randint(0,total_columns)
-  yCenterPt = random.randint(0,total_rows)
-  donutSize = random.randint(6,60)
-  
+  donutSize = random.randint(10,30)
+  xCenterPt = random.randint(-donutSize,total_columns+donutSize)
+  yCenterPt = random.randint(-donutSize,total_rows+donutSize)
+
   drawPoint.point((xCenterPt,yCenterPt), fill = blue)
   for i in range (donutSize/2):
     
