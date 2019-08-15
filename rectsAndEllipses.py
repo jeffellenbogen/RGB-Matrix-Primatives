@@ -66,7 +66,9 @@ while True:
   ########################################
   # Erase rectangles that go beyond the largest circle
   #########################################  
-
+  for i in range (total_rows/2, total_rows):
+    draw.rectangle((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = (black))
+  matrix.SetImage(image, 0, 0)
 
   ########################################
   # Erase whole matrix by setting to black
