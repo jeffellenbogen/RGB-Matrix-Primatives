@@ -44,7 +44,7 @@ black = (0,0,0)
 xCenterPt = total_columns/2 - 1
 yCenterPt = total_rows/2 - 1
 incrementer = 12
-lineWidth = 2
+lineWidth = 4
 
 ###################################
 # Main loop 
@@ -54,7 +54,7 @@ draw = ImageDraw.Draw(image)
 
 
 while True:
-  for i in range (0, total_columns/2, incrementer):
+  for i in range (0, total_rows/2, incrementer):
     for j in range (lineWidth):
       draw.rectangle((xCenterPt - i - j, yCenterPt - i - j, xCenterPt + i + j, yCenterPt + i + j), outline = (red))
       matrix.SetImage(image, 0, 0)
