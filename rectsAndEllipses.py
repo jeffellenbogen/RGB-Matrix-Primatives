@@ -57,12 +57,12 @@ while True:
   for i in range (0, total_rows/2, incrementer):
     for j in range (lineWidth):
       draw.rectangle((xCenterPt - i - j, yCenterPt - i - j, xCenterPt + i + j, yCenterPt + i + j), outline = (red))
-      sleep(.05)
       matrix.SetImage(image, 0, 0)
+    sleep (.05)  
     for j in range (lineWidth):  
       draw.ellipse((xCenterPt- i - incrementer/2 - j,yCenterPt - i - incrementer/2 - j,xCenterPt + i + incrementer/2 + j,yCenterPt + i + incrementer/2 + j), outline = (blue))
-      sleep(.05)
       matrix.SetImage(image, 0, 0)  
+    sleep (.05)
   sleep(1)
   draw.rectangle((0,0,total_columns,total_rows), fill = (black))
   matrix.SetImage(image, 0, 0)  
