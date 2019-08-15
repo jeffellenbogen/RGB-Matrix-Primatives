@@ -54,13 +54,19 @@ draw = ImageDraw.Draw(image)
 
 
 while True:
+  incrementer = random.randint(1,10)
+  lineWidth = random.randint(1,incrementer/2)
+  randomColor = random.randint(0,360)
+  rectColor ="hsl({}, 100%, 50%)".format(randomColor) 
+  ellipseColor ="hsl({}, 100%, 50%)".format(randomColor+180)  
+
   for i in range (0, total_rows/2, incrementer):
     for j in range (lineWidth):
-      draw.rectangle((xCenterPt - i - j, yCenterPt - i - j, xCenterPt + i + j, yCenterPt + i + j), outline = (red))
+      draw.rectangle((xCenterPt - i - j, yCenterPt - i - j, xCenterPt + i + j, yCenterPt + i + j), outline = (rectColor))
       matrix.SetImage(image, 0, 0)
     sleep (.05)  
     for j in range (lineWidth):  
-      draw.ellipse((xCenterPt- i - incrementer/2 - j,yCenterPt - i - incrementer/2 - j,xCenterPt + i + incrementer/2 + j,yCenterPt + i + incrementer/2 + j), outline = (blue))
+      draw.ellipse((xCenterPt- i - incrementer/2 - j,yCenterPt - i - incrementer/2 - j,xCenterPt + i + incrementer/2 + j,yCenterPt + i + incrementer/2 + j), outline = (ellipseColor))
       matrix.SetImage(image, 0, 0)  
     sleep (.05)
   ########################################
