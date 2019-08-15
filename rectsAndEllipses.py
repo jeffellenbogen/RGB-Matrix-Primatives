@@ -39,10 +39,11 @@ red = (255,0,0)
 blue = (0,0,255)
 green = (0,255,0)
 white = (250,250,250)
+black = (0,0,0)
 
 xCenterPt = total_columns/2 - 1
 yCenterPt = total_rows/2 - 1
-incrementer = 4
+incrementer = 6
 
 ###################################
 # Main loop 
@@ -54,13 +55,16 @@ draw = ImageDraw.Draw(image)
 while True:
   for i in range (0, total_rows/2, incrementer):
     draw.rectangle((xCenterPt - i,yCenterPt - i,xCenterPt + i,yCenterPt + i), outline = (red))
+    draw.rectangle((xCenterPt - i - 1,yCenterPt - i - 1,xCenterPt + i + 1,yCenterPt + i + 1), outline = (red))
     sleep(.05)
     matrix.SetImage(image, 0, 0)
     draw.ellipse((xCenterPt- i - incrementer/2,yCenterPt - i - incrementer/2,xCenterPt + i + incrementer/2,yCenterPt + i + incrementer/2), outline = (blue))
+    draw.ellipse((xCenterPt- i - incrementer/2 - 1,yCenterPt - i - incrementer/2 - 1,xCenterPt + i + incrementer/2 + 1,yCenterPt + i + incrementer/2 + 1), outline = (blue))
     sleep(.05)
     matrix.SetImage(image, 0, 0)  
   sleep(1)
-
+  draw.rectangle((0,0,total_columns,total_rows), outline = (black))
+  matrix.SetImage(image, 0, 0)  
 
 try:
   print("Press CTRL-C to stop")
