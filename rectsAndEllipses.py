@@ -56,11 +56,11 @@ draw = ImageDraw.Draw(image)
 while True:
   for i in range (0, total_rows/2, incrementer):
     for j in range (lineWidth):
-      draw.rectangle((xCenterPt - i - lineWidth, yCenterPt - i - lineWidth, xCenterPt + i + lineWidth, yCenterPt + i + lineWidth), outline = (red))
+      draw.rectangle((xCenterPt - i - j, yCenterPt - i - j, xCenterPt + i + j, yCenterPt + i + j), outline = (red))
       sleep(.05)
       matrix.SetImage(image, 0, 0)
     for j in range (lineWidth):  
-      draw.ellipse((xCenterPt- i - incrementer/2 - lineWidth,yCenterPt - i - incrementer/2 - lineWidth,xCenterPt + i + incrementer/2 + lineWidth,yCenterPt + i + incrementer/2 + lineWidth), outline = (blue))
+      draw.ellipse((xCenterPt- i - incrementer/2 - j,yCenterPt - i - incrementer/2 - j,xCenterPt + i + incrementer/2 + j,yCenterPt + i + incrementer/2 + j), outline = (blue))
       sleep(.05)
       matrix.SetImage(image, 0, 0)  
   sleep(1)
