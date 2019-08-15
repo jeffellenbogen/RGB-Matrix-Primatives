@@ -63,7 +63,15 @@ while True:
       draw.ellipse((xCenterPt- i - incrementer/2 - j,yCenterPt - i - incrementer/2 - j,xCenterPt + i + incrementer/2 + j,yCenterPt + i + incrementer/2 + j), outline = (blue))
       matrix.SetImage(image, 0, 0)  
     sleep (.05)
-  sleep(1)
+  ########################################
+  # Erase rectangles that go beyond the largest circle
+  #########################################  
+
+
+  ########################################
+  # Erase whole matrix by setting to black
+  #########################################
+  sleep(2)
   draw.rectangle((0,0,total_columns,total_rows), fill = (black))
   matrix.SetImage(image, 0, 0)  
 
