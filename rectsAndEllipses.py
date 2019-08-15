@@ -63,7 +63,7 @@ while True:
     sleep(.05)
     matrix.SetImage(image, 0, 0)  
   sleep(1)
-  draw.rectangle((0,0,total_columns,total_rows), outline = (black))
+  draw.rectangle((0,0,total_columns,total_rows), fill = (black))
   matrix.SetImage(image, 0, 0)  
 
 try:
