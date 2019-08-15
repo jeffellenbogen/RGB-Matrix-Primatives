@@ -41,13 +41,15 @@ donutSize = random.randint(10,30)
 xCenterPt = random.randint(0,total_columns)
 yCenterPt = random.randint(0,total_rows)
 
-speed = .05
 pause = 1
 
 image = Image.new("RGB", (total_columns,total_rows))
 drawRect = ImageDraw.Draw(image)
 drawCircle = ImageDraw.Draw(image)
 drawPoint = ImageDraw.Draw(image)
+
+drawRect.rectangle((0,0,total_columns,total_rows), fill = blue)
+matrix.SetImage(image,0,0)
 
 while True:
   donutSize = random.randint(10,30)
@@ -61,7 +63,13 @@ while True:
   for i in range (donutSize/2,donutSize):
     drawCircle.ellipse((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = red )
   matrix.SetImage(image, 0, 0)
+  
+  cycleCount+=1
+  sleep(pause)
+  if cycleCount > 10:
+    cycleCount = 0
+    drawRect.rectangle((0,0,total_columns,total_rows), fill = blue)
+    matrix.SetImage(image,0,0)
 
-  sleep(pause)    
 
 
