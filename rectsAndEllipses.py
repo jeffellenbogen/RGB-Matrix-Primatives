@@ -43,8 +43,8 @@ black = (0,0,0)
 
 xCenterPt = total_columns/2 - 1
 yCenterPt = total_rows/2 - 1
-incrementer = 12
-lineWidth = 4
+incrementer = 4
+lineWidth = 2
 
 ###################################
 # Main loop 
