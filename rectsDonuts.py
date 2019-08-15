@@ -51,8 +51,8 @@ drawPoint = ImageDraw.Draw(image)
 
 while True:
   donutSize = random.randint(10,30)
-  xCenterPt = random.randint(-donutSize,total_columns+donutSize)
-  yCenterPt = random.randint(-donutSize,total_rows+donutSize)
+  xCenterPt = random.randint(-donutSize/2,total_columns+donutSize/2)
+  yCenterPt = random.randint(-donutSize/2,total_rows+donutSize/2)
 
   drawPoint.point((xCenterPt,yCenterPt), fill = blue)
   for i in range (donutSize/2):
