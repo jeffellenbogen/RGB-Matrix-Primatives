@@ -58,9 +58,8 @@ while True:
   yCenterPt = random.randint(-donutSize/2,total_rows+donutSize/2)
 
   drawPoint.point((xCenterPt,yCenterPt), fill = blue)
-  for i in range (donutSize/2):
-    
-    drawCircle.ellipse((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = blue )
+  '''for i in range (donutSize/2):
+    drawCircle.ellipse((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = blue )'''
   for i in range (donutSize/2,donutSize):
     drawCircle.ellipse((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = red )
   matrix.SetImage(image, 0, 0)
