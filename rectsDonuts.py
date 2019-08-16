@@ -37,7 +37,7 @@ red = (255,0,0)
 blue = (0,0,255)
 black = (0,0,0)
 
-donutSize = random.randint(10,30)
+donutSize = random.randint(10,60)
 xCenterPt = random.randint(0,total_columns)
 yCenterPt = random.randint(0,total_rows)
 
@@ -69,7 +69,7 @@ while True:
 
   cycleCount+=1
   sleep(pause)
-  if cycleCount > 20:
+  if cycleCount > 10:
     cycleCount = 0
     drawRect.rectangle((0,0,total_columns,total_rows), fill = blue)
     matrix.SetImage(image,0,0)
