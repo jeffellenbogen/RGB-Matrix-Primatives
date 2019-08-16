@@ -57,6 +57,9 @@ while True:
   xCenterPt = random.randint(-donutSize/2,total_columns+donutSize/2)
   yCenterPt = random.randint(-donutSize/2,total_rows+donutSize/2)
 
+  randomColor = random.randint(0,360)
+  donut_color ="hsl({}, 100%, 50%)".format(randomColor) 
+
   ##commented off the inner blue part of each donut
   #drawPoint.point((xCenterPt,yCenterPt), fill = blue)
   '''for i in range (donutSize/2):
@@ -64,7 +67,7 @@ while True:
 
 
   for i in range (donutSize/2,donutSize):
-    drawCircle.ellipse((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = red )
+    drawCircle.ellipse((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = donut_color )
   matrix.SetImage(image, 0, 0)
 
   cycleCount+=1
