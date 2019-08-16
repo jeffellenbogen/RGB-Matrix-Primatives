@@ -49,7 +49,7 @@ drawRect = ImageDraw.Draw(image)
 drawCircle = ImageDraw.Draw(image)
 drawPoint = ImageDraw.Draw(image)
 
-drawRect.rectangle((0,0,total_columns,total_rows), fill = blue)
+drawRect.rectangle((0,0,total_columns,total_rows), fill = black)
 matrix.SetImage(image,0,0)
 
 while True:
@@ -57,9 +57,8 @@ while True:
   xCenterPt = random.randint(-donutSize/2,total_columns+donutSize/2)
   yCenterPt = random.randint(-donutSize/2,total_rows+donutSize/2)
 
-  #randomColor = random.randint(0,360)
-  #donut_color ="hsl({}, 100%, 50%)".format(randomColor) 
-  donut_color = red
+  randomColor = random.randint(0,360)
+  donut_color ="hsl({}, 100%, 50%)".format(randomColor) 
 
   ##commented off the inner blue part of each donut
   #drawPoint.point((xCenterPt,yCenterPt), fill = blue)
@@ -75,7 +74,7 @@ while True:
   sleep(pause)
   if cycleCount > 10:
     cycleCount = 0
-    drawRect.rectangle((0,0,total_columns,total_rows), fill = blue)
+    drawRect.rectangle((0,0,total_columns,total_rows), fill = black)
     matrix.SetImage(image,0,0)
 
 
