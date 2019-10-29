@@ -75,7 +75,8 @@ drawRect = ImageDraw.Draw(image)
 drawCircle = ImageDraw.Draw(image)
 drawPoint = ImageDraw.Draw(image)
 
-drawRect.rectangle((0,0,total_columns,total_rows), fill = (knobRvalue, knobGvalue, knobBvalue))
+backgrdColor = (knobRvalue, knobGvalue, knobBvalue)
+drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
 matrix.SetImage(image,0,0)
 
 #MQTT client setup
@@ -121,7 +122,7 @@ while True:
   sleep(pause)
   if cycleCount > 10:
     cycleCount = 0
-    drawRect.rectangle((0,0,total_columns,total_rows), fill = donut_color)
+    drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
     matrix.SetImage(image,0,0)
 
 
