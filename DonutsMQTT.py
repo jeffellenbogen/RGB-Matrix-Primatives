@@ -106,8 +106,8 @@ while True:
 
   #randomColor = random.randint(0,360)
   #donut_color ="hsl({}, 100%, 50%)".format(randomColor) 
-  donut_color = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
-  backgrdColor = (knobRvalue, knobGvalue, knobBvalue)
+  #donut_color = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
+  #backgrdColor = (knobRvalue, knobGvalue, knobBvalue)
 
   ##commented off the inner blue part of each donut
   #drawPoint.point((xCenterPt,yCenterPt), fill = blue)
@@ -116,6 +116,8 @@ while True:
 
 
   for i in range (donutSize/2,donutSize):
+    donut_color = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
+    backgrdColor = (knobRvalue, knobGvalue, knobBvalue)
     drawCircle.ellipse((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = donut_color )
   matrix.SetImage(image, 0, 0)
 
