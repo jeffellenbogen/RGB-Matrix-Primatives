@@ -11,16 +11,23 @@ from PIL import Image, ImageDraw
 import paho.mqtt.client as mqtt
 
 def on_message(client,userdata,message):
-  global registration_complete 
-  global player
+  global knobRvalue
+  global knobGvalue 
+  global knobBvalue
 
   # right now, the only message we've subscribed to is the registration
   # response, so I don't need to check topic.
 
-  print("Color Data Received")
-
-  player = message.payload
-  registration_complete = True
+  
+  print("Color Data Received " + message.topic + " " + message.payload)
+  if (message.topic == "color/red"):
+    knobRvalue = int(message.payload)
+  elif (message.topic == "color/green"):
+    knobGvalue = int(message.payload)
+  elif (message.topic == "color/blue"):
+    knobBvalue = int(message.payload)
+  else: 
+    print ("unknown topic")
 
 # this is the size of ONE of our matrixes. 
 matrix_rows = 32 
@@ -71,6 +78,7 @@ drawPoint = ImageDraw.Draw(image)
 drawRect.rectangle((0,0,total_columns,total_rows), fill = (knobRvalue, knobGvalue, knobBvalue))
 matrix.SetImage(image,0,0)
 
+#MQTT client setup
 broker_address = "makerlabpi1"
 client_name = "DonutMQTT"
 client = mqtt.Client(client_name)
@@ -79,8 +87,15 @@ try:
 except:
   print "Unable to connect to MQTT broker"
   exit(0)
-client.loop_start()
-client.on_message=on_message
+client.loop_start() #starts looking for callbacks
+client.on_message=on_message #sets callback to on_message function when message is received
+
+#MQTT subscribe
+subscribe_str = "color/#"
+print("subscribing to " + subscribe_str)
+client.subscribe(subscribe_str)
+#client.publish("register/request", client_name) #not using this publish statement (topic, payload)
+
 
 
 while True:
