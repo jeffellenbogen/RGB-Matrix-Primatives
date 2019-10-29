@@ -76,7 +76,7 @@ drawCircle = ImageDraw.Draw(image)
 drawPoint = ImageDraw.Draw(image)
 
 
-drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
+drawRect.rectangle((0,0,total_columns,total_rows), fill = black)
 matrix.SetImage(image,0,0)
 
 #MQTT client setup
