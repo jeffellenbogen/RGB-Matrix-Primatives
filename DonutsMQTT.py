@@ -75,7 +75,7 @@ drawRect = ImageDraw.Draw(image)
 drawCircle = ImageDraw.Draw(image)
 drawPoint = ImageDraw.Draw(image)
 
-backgrdColor = (knobRvalue, knobGvalue, knobBvalue)
+
 drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
 matrix.SetImage(image,0,0)
 
@@ -107,6 +107,7 @@ while True:
   #randomColor = random.randint(0,360)
   #donut_color ="hsl({}, 100%, 50%)".format(randomColor) 
   donut_color = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
+  backgrdColor = (knobRvalue, knobGvalue, knobBvalue)
 
   ##commented off the inner blue part of each donut
   #drawPoint.point((xCenterPt,yCenterPt), fill = blue)
