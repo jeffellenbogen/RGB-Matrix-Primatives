@@ -14,9 +14,7 @@ def on_message(client,userdata,message):
   global knobRvalue
   global knobGvalue 
   global knobBvalue
-
-  # right now, the only message we've subscribed to is the registration
-  # response, so I don't need to check topic.
+  global colorChanged
 
   
   print("Color Data Received " + message.topic + " " + message.payload)
@@ -28,6 +26,8 @@ def on_message(client,userdata,message):
     knobBvalue = int(message.payload)
   else: 
     print ("unknown topic")
+
+  colorChanged = True
 
 # this is the size of ONE of our matrixes. 
 matrix_rows = 32 
@@ -97,7 +97,7 @@ print("subscribing to " + subscribe_str)
 client.subscribe(subscribe_str)
 #client.publish("register/request", client_name) #not using this publish statement (topic, payload)
 
-
+colorChanged = False
 
 while True:
   donutSize = random.randint(10,30)
@@ -118,7 +118,11 @@ while True:
   for i in range (donutSize/2,donutSize):
     donut_color = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
     backgrdColor = (knobRvalue, knobGvalue, knobBvalue)
+    if colorChanged:
+      drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
+      colorChanged = False
     drawCircle.ellipse((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = donut_color )
+  
   matrix.SetImage(image, 0, 0)
 
   cycleCount+=1
