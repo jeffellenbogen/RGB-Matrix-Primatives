@@ -119,7 +119,7 @@ while True:
 
   cycleCount+=1
   sleep(pause)
-  if cycleCount > 10:
+  if cycleCount > 16:
     cycleCount = 0
     drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
     matrix.SetImage(image,0,0)
