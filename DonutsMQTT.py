@@ -108,13 +108,13 @@ while True:
   yCenterPt = random.randint(-donutSize/2,total_rows+donutSize/2)
 
 
-  for i in range (donutSize*.3,donutSize):
+  for i in range (int(donutSize*.3),donutSize):
     donut_color = (knobRvalue, knobGvalue, knobBvalue) 
     backgrdColor = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
     if colorChanged:
       drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
       colorChanged = False
-    drawCircle.ellipse((xCenterPt - i, yCenterPt - i * donutStrechRatio, xCenterPt + i, yCenterPt + i * donutStrechRatio), outline = donut_color )
+    drawCircle.ellipse((xCenterPt - i, yCenterPt - int(i * donutStrechRatio), xCenterPt + i, yCenterPt + int(i * donutStrechRatio)), outline = donut_color )
   
   matrix.SetImage(image, 0, 0)
 
