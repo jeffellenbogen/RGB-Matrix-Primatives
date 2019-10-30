@@ -57,6 +57,7 @@ matrix = RGBMatrix(options = options)
 red = (255,0,0)
 blue = (0,0,255)
 black = (0,0,0)
+white = (255,255,255)
 
 ##subscribe to MQTT topic here to get changes to p5.js knobMaker page
 knobRvalue = 0
@@ -76,7 +77,7 @@ drawCircle = ImageDraw.Draw(image)
 drawPoint = ImageDraw.Draw(image)
 
 
-drawRect.rectangle((0,0,total_columns,total_rows), fill = black)
+drawRect.rectangle((0,0,total_columns,total_rows), fill = white)
 matrix.SetImage(image,0,0)
 
 #MQTT client setup
@@ -116,8 +117,8 @@ while True:
 
 
   for i in range (donutSize/2,donutSize):
-    donut_color = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
-    backgrdColor = (knobRvalue, knobGvalue, knobBvalue)
+    donut_color = (knobRvalue, knobGvalue, knobBvalue) 
+    backgrdColor = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
     if colorChanged:
       drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
       colorChanged = False
