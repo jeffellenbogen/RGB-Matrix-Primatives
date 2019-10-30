@@ -65,6 +65,7 @@ knobGvalue = 0
 knobBvalue = 0
 
 donutStrechRatio = .7
+donutQuantity = 16
 donutSize = random.randint(10,60)
 xCenterPt = random.randint(0,total_columns)
 yCenterPt = random.randint(0,total_rows)
@@ -119,7 +120,7 @@ while True:
 
   cycleCount+=1
   sleep(pause)
-  if cycleCount > 16:
+  if cycleCount >= donutQuantity:
     cycleCount = 0
     drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
     matrix.SetImage(image,0,0)
