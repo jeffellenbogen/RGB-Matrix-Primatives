@@ -64,7 +64,7 @@ knobRvalue = 0
 knobGvalue = 0
 knobBvalue = 0
 
-donutStrechRatio = .7
+donutStrechRatio = .6
 donutQuantity = 16
 donutSize = random.randint(10,60)
 xCenterPt = random.randint(0,total_columns)
