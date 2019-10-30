@@ -64,6 +64,7 @@ knobRvalue = 0
 knobGvalue = 0
 knobBvalue = 0
 
+donutStrechRatio = .7
 donutSize = random.randint(10,60)
 xCenterPt = random.randint(0,total_columns)
 yCenterPt = random.randint(0,total_rows)
@@ -105,16 +106,6 @@ while True:
   xCenterPt = random.randint(-donutSize/2,total_columns+donutSize/2)
   yCenterPt = random.randint(-donutSize/2,total_rows+donutSize/2)
 
-  #randomColor = random.randint(0,360)
-  #donut_color ="hsl({}, 100%, 50%)".format(randomColor) 
-  #donut_color = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
-  #backgrdColor = (knobRvalue, knobGvalue, knobBvalue)
-
-  ##commented off the inner blue part of each donut
-  #drawPoint.point((xCenterPt,yCenterPt), fill = blue)
-  '''for i in range (donutSize/2):
-    drawCircle.ellipse((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = blue )'''
-
 
   for i in range (donutSize/2,donutSize):
     donut_color = (knobRvalue, knobGvalue, knobBvalue) 
@@ -122,7 +113,7 @@ while True:
     if colorChanged:
       drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
       colorChanged = False
-    drawCircle.ellipse((xCenterPt - i, yCenterPt - i, xCenterPt + i, yCenterPt + i), outline = donut_color )
+    drawCircle.ellipse((xCenterPt - i, yCenterPt - i * donutStrechRatio, xCenterPt + i, yCenterPt + i * donutStrechRatio), outline = donut_color )
   
   matrix.SetImage(image, 0, 0)
 
