@@ -68,7 +68,7 @@ drawRect = ImageDraw.Draw(image)
 drawCircle = ImageDraw.Draw(image)
 drawPoint = ImageDraw.Draw(image)
 
-drawRect.rectangle((0,0,total_columns,total_rows), fill = (knobRvalue, knobGvalue, knobBvalue))
+drawRect.rectangle((0,0,total_columns,total_rows), fill = (255-knobRvalue, 255-knobGvalue, 255-knobBvalue))
 matrix.SetImage(image,0,0)
 
 broker_address = "makerlabpi1"
@@ -90,7 +90,7 @@ while True:
 
   #randomColor = random.randint(0,360)
   #donut_color ="hsl({}, 100%, 50%)".format(randomColor) 
-  donut_color = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
+  donut_color = (knobRvalue, knobGvalue, knobBvalue)
 
   ##commented off the inner blue part of each donut
   #drawPoint.point((xCenterPt,yCenterPt), fill = blue)
@@ -106,7 +106,7 @@ while True:
   sleep(pause)
   if cycleCount > 10:
     cycleCount = 0
-    drawRect.rectangle((0,0,total_columns,total_rows), fill = blue)
+    drawRect.rectangle((0,0,total_columns,total_rows), fill = (255-knobRvalue, 255-knobGvalue, 255-knobBvalue))
     matrix.SetImage(image,0,0)
 
 
