@@ -114,7 +114,10 @@ while True:
     if colorChanged:
       drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
       colorChanged = False
-    drawCircle.ellipse((xCenterPt - i, yCenterPt - int(i * donutStrechRatio), xCenterPt + i, yCenterPt + int(i * donutStrechRatio)), outline = donut_color )
+    if (i==donutSize):
+      drawCircle.ellipse((xCenterPt - i, yCenterPt - int(i * donutStrechRatio), xCenterPt + i, yCenterPt + int(i * donutStrechRatio)), outline = black )
+    else:
+      drawCircle.ellipse((xCenterPt - i, yCenterPt - int(i * donutStrechRatio), xCenterPt + i, yCenterPt + int(i * donutStrechRatio)), outline = donut_color )
   
   matrix.SetImage(image, 0, 0)
 
