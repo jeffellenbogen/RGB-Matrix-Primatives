@@ -107,14 +107,15 @@ while True:
   xCenterPt = random.randint(-donutSize/2,total_columns+donutSize/2)
   yCenterPt = random.randint(-donutSize/2,total_rows+donutSize/2)
 
+  innerHole = int(donutSize*.3
 
-  for i in range (int(donutSize*.3),donutSize):
+  for i in range (innerHole),donutSize):
     donut_color = (knobRvalue, knobGvalue, knobBvalue) 
     backgrdColor = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
     if colorChanged:
       drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
       colorChanged = False
-    if ((i>=donutSize-1) or (i==int(donut_color*.3)):
+    if ((i>=donutSize-1) or (i==innerHole)):
       drawCircle.ellipse((xCenterPt - i, yCenterPt - int(i * donutStrechRatio), xCenterPt + i, yCenterPt + int(i * donutStrechRatio)), outline = black )
     else:
       drawCircle.ellipse((xCenterPt - i, yCenterPt - int(i * donutStrechRatio), xCenterPt + i, yCenterPt + int(i * donutStrechRatio)), outline = donut_color )
