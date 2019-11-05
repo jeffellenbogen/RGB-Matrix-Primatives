@@ -114,7 +114,7 @@ while True:
     if colorChanged:
       drawRect.rectangle((0,0,total_columns,total_rows), fill = backgrdColor)
       colorChanged = False
-    if (i>=donutSize-1):
+    if (i>=donutSize-1) or (i=int(donut_color*.3):
       drawCircle.ellipse((xCenterPt - i, yCenterPt - int(i * donutStrechRatio), xCenterPt + i, yCenterPt + int(i * donutStrechRatio)), outline = black )
     else:
       drawCircle.ellipse((xCenterPt - i, yCenterPt - int(i * donutStrechRatio), xCenterPt + i, yCenterPt + int(i * donutStrechRatio)), outline = donut_color )
