@@ -109,7 +109,7 @@ while True:
 
   innerHole = int(donutSize*.3
 
-  for i in range (innerHole),donutSize):
+  for i in range (innerHole,donutSize):
     donut_color = (knobRvalue, knobGvalue, knobBvalue) 
     backgrdColor = (255 - knobRvalue, 255 - knobGvalue, 255 - knobBvalue)
     if colorChanged:
