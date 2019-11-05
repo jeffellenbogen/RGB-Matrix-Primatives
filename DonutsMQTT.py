@@ -107,7 +107,7 @@ while True:
   xCenterPt = random.randint(-donutSize/2,total_columns+donutSize/2)
   yCenterPt = random.randint(-donutSize/2,total_rows+donutSize/2)
 
-  innerHole = int(donutSize*.3
+  innerHole = int(donutSize*.3)
 
   for i in range (innerHole,donutSize):
     donut_color = (knobRvalue, knobGvalue, knobBvalue) 
